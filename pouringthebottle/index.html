@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="彩色液体排序益智游戏 - 100个精心设计的关卡等你挑战！">
+    <meta name="theme-color" content="#667eea">
+    
+    <!-- PWA支持 -->
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/icon-192.png">
+    
+    <title>倒瓶子游戏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        #gameCanvas {
+            display: block;
+            width: 100vw;
+            height: 100vh;
+            cursor: pointer;
+            /* 防止闪烁的优化 */
+            will-change: transform;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            -webkit-backface-visibility: hidden;
+            -webkit-perspective: 1000px;
+            perspective: 1000px;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+        }
+
+        /* 模态框样式 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 40px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            animation: slideIn 0.3s;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .win-content {
+            text-align: center;
+        }
+
+        .win-content h2 {
+            font-size: 2rem;
+            color: #667eea;
+            margin-bottom: 30px;
+        }
+
+        .win-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 25px;
+        }
+
+        .apply-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .apply-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .secondary-btn {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .secondary-btn:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* 音效控制按钮 */
+        .audio-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .audio-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .audio-toggle:active {
+            transform: scale(0.95);
+        }
+
+        .audio-toggle.muted {
+            background: rgba(200, 200, 200, 0.9);
+        }
+
+        /* 关卡显示 */
+        .level-display {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #667eea;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            user-select: none;
+        }
+
+        .level-display .level-number {
+            font-size: 1.5rem;
+            color: #764ba2;
+        }
+    </style>
+  <script type="module" crossorigin src="/assets/main-CVRIyFpm.js"></script>
+<link rel="manifest" href="/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script></head>
+<body>
+    <canvas id="gameCanvas"></canvas>
+    
+    <!-- 关卡显示 -->
+    <div id="levelDisplay" class="level-display">
+        关卡 <span class="level-number" id="levelNumber">1</span> / 100
+    </div>
+    
+    <!-- 音效控制按钮 -->
+    <button id="audioToggle" class="audio-toggle" title="音效开关">🔊</button>
+
+    <!-- 胜利模态框 -->
+    <div id="winModal" class="modal">
+        <div class="modal-content win-content">
+            <h2>🎉 完成！</h2>
+            <div class="win-buttons">
+                <button class="apply-btn" onclick="nextLevel()">下一关</button>
+                <button class="secondary-btn" onclick="resetLevel()">重玩</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
