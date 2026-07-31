@@ -1,15 +1,465 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.claudenovo.com/</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.claudenovo.com/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.claudenovo.com/zh/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.claudenovo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.claudenovo.com/ko/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.claudenovo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.claudenovo.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.claudenovo.com/de/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.claudenovo.com/pt/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.claudenovo.com/it/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.claudenovo.com/ru/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://www.claudenovo.com/vi/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.claudenovo.com/id/" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.claudenovo.com/th/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.claudenovo.com/tr/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.claudenovo.com/nl/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://www.claudenovo.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.claudenovo.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.claudenovo.com/hi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.claudenovo.com/" />
+  </url>
+  <url>
+    <loc>https://www.claudenovo.com/zh/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.claudenovo.com/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.claudenovo.com/zh/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.claudenovo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.claudenovo.com/ko/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.claudenovo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.claudenovo.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.claudenovo.com/de/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.claudenovo.com/pt/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.claudenovo.com/it/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.claudenovo.com/ru/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://www.claudenovo.com/vi/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.claudenovo.com/id/" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.claudenovo.com/th/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.claudenovo.com/tr/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.claudenovo.com/nl/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://www.claudenovo.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.claudenovo.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.claudenovo.com/hi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.claudenovo.com/" />
+  </url>
+  <url>
+    <loc>https://www.claudenovo.com/ja/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.claudenovo.com/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.claudenovo.com/zh/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.claudenovo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.claudenovo.com/ko/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.claudenovo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.claudenovo.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.claudenovo.com/de/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.claudenovo.com/pt/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.claudenovo.com/it/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.claudenovo.com/ru/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://www.claudenovo.com/vi/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.claudenovo.com/id/" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.claudenovo.com/th/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.claudenovo.com/tr/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.claudenovo.com/nl/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://www.claudenovo.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.claudenovo.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.claudenovo.com/hi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.claudenovo.com/" />
+  </url>
+  <url>
+    <loc>https://www.claudenovo.com/ko/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.claudenovo.com/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.claudenovo.com/zh/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.claudenovo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.claudenovo.com/ko/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.claudenovo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.claudenovo.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.claudenovo.com/de/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.claudenovo.com/pt/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.claudenovo.com/it/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.claudenovo.com/ru/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://www.claudenovo.com/vi/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.claudenovo.com/id/" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.claudenovo.com/th/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.claudenovo.com/tr/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.claudenovo.com/nl/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://www.claudenovo.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.claudenovo.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.claudenovo.com/hi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.claudenovo.com/" />
+  </url>
+  <url>
+    <loc>https://www.claudenovo.com/es/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.claudenovo.com/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.claudenovo.com/zh/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.claudenovo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.claudenovo.com/ko/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.claudenovo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.claudenovo.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.claudenovo.com/de/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.claudenovo.com/pt/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.claudenovo.com/it/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.claudenovo.com/ru/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://www.claudenovo.com/vi/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.claudenovo.com/id/" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.claudenovo.com/th/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.claudenovo.com/tr/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.claudenovo.com/nl/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://www.claudenovo.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.claudenovo.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.claudenovo.com/hi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.claudenovo.com/" />
+  </url>
+  <url>
+    <loc>https://www.claudenovo.com/fr/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.claudenovo.com/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.claudenovo.com/zh/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.claudenovo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.claudenovo.com/ko/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.claudenovo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.claudenovo.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.claudenovo.com/de/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.claudenovo.com/pt/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.claudenovo.com/it/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.claudenovo.com/ru/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://www.claudenovo.com/vi/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.claudenovo.com/id/" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.claudenovo.com/th/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.claudenovo.com/tr/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.claudenovo.com/nl/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://www.claudenovo.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.claudenovo.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.claudenovo.com/hi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.claudenovo.com/" />
+  </url>
+  <url>
+    <loc>https://www.claudenovo.com/de/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.claudenovo.com/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.claudenovo.com/zh/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.claudenovo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.claudenovo.com/ko/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.claudenovo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.claudenovo.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.claudenovo.com/de/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.claudenovo.com/pt/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.claudenovo.com/it/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.claudenovo.com/ru/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://www.claudenovo.com/vi/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.claudenovo.com/id/" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.claudenovo.com/th/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.claudenovo.com/tr/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.claudenovo.com/nl/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://www.claudenovo.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.claudenovo.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.claudenovo.com/hi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.claudenovo.com/" />
+  </url>
+  <url>
+    <loc>https://www.claudenovo.com/pt/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.claudenovo.com/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.claudenovo.com/zh/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.claudenovo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.claudenovo.com/ko/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.claudenovo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.claudenovo.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.claudenovo.com/de/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.claudenovo.com/pt/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.claudenovo.com/it/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.claudenovo.com/ru/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://www.claudenovo.com/vi/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.claudenovo.com/id/" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.claudenovo.com/th/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.claudenovo.com/tr/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.claudenovo.com/nl/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://www.claudenovo.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.claudenovo.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.claudenovo.com/hi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.claudenovo.com/" />
+  </url>
+  <url>
+    <loc>https://www.claudenovo.com/it/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.claudenovo.com/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.claudenovo.com/zh/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.claudenovo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.claudenovo.com/ko/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.claudenovo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.claudenovo.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.claudenovo.com/de/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.claudenovo.com/pt/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.claudenovo.com/it/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.claudenovo.com/ru/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://www.claudenovo.com/vi/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.claudenovo.com/id/" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.claudenovo.com/th/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.claudenovo.com/tr/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.claudenovo.com/nl/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://www.claudenovo.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.claudenovo.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.claudenovo.com/hi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.claudenovo.com/" />
+  </url>
+  <url>
+    <loc>https://www.claudenovo.com/ru/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.claudenovo.com/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.claudenovo.com/zh/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.claudenovo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.claudenovo.com/ko/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.claudenovo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.claudenovo.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.claudenovo.com/de/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.claudenovo.com/pt/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.claudenovo.com/it/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.claudenovo.com/ru/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://www.claudenovo.com/vi/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.claudenovo.com/id/" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.claudenovo.com/th/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.claudenovo.com/tr/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.claudenovo.com/nl/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://www.claudenovo.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.claudenovo.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.claudenovo.com/hi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.claudenovo.com/" />
+  </url>
+  <url>
+    <loc>https://www.claudenovo.com/vi/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.claudenovo.com/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.claudenovo.com/zh/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.claudenovo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.claudenovo.com/ko/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.claudenovo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.claudenovo.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.claudenovo.com/de/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.claudenovo.com/pt/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.claudenovo.com/it/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.claudenovo.com/ru/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://www.claudenovo.com/vi/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.claudenovo.com/id/" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.claudenovo.com/th/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.claudenovo.com/tr/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.claudenovo.com/nl/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://www.claudenovo.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.claudenovo.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.claudenovo.com/hi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.claudenovo.com/" />
+  </url>
+  <url>
+    <loc>https://www.claudenovo.com/id/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.claudenovo.com/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.claudenovo.com/zh/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.claudenovo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.claudenovo.com/ko/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.claudenovo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.claudenovo.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.claudenovo.com/de/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.claudenovo.com/pt/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.claudenovo.com/it/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.claudenovo.com/ru/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://www.claudenovo.com/vi/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.claudenovo.com/id/" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.claudenovo.com/th/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.claudenovo.com/tr/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.claudenovo.com/nl/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://www.claudenovo.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.claudenovo.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.claudenovo.com/hi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.claudenovo.com/" />
+  </url>
+  <url>
+    <loc>https://www.claudenovo.com/th/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.claudenovo.com/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.claudenovo.com/zh/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.claudenovo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.claudenovo.com/ko/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.claudenovo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.claudenovo.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.claudenovo.com/de/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.claudenovo.com/pt/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.claudenovo.com/it/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.claudenovo.com/ru/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://www.claudenovo.com/vi/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.claudenovo.com/id/" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.claudenovo.com/th/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.claudenovo.com/tr/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.claudenovo.com/nl/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://www.claudenovo.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.claudenovo.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.claudenovo.com/hi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.claudenovo.com/" />
+  </url>
+  <url>
+    <loc>https://www.claudenovo.com/tr/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.claudenovo.com/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.claudenovo.com/zh/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.claudenovo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.claudenovo.com/ko/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.claudenovo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.claudenovo.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.claudenovo.com/de/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.claudenovo.com/pt/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.claudenovo.com/it/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.claudenovo.com/ru/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://www.claudenovo.com/vi/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.claudenovo.com/id/" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.claudenovo.com/th/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.claudenovo.com/tr/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.claudenovo.com/nl/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://www.claudenovo.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.claudenovo.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.claudenovo.com/hi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.claudenovo.com/" />
+  </url>
+  <url>
+    <loc>https://www.claudenovo.com/nl/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.claudenovo.com/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.claudenovo.com/zh/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.claudenovo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.claudenovo.com/ko/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.claudenovo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.claudenovo.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.claudenovo.com/de/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.claudenovo.com/pt/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.claudenovo.com/it/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.claudenovo.com/ru/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://www.claudenovo.com/vi/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.claudenovo.com/id/" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.claudenovo.com/th/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.claudenovo.com/tr/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.claudenovo.com/nl/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://www.claudenovo.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.claudenovo.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.claudenovo.com/hi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.claudenovo.com/" />
+  </url>
+  <url>
+    <loc>https://www.claudenovo.com/pl/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.claudenovo.com/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.claudenovo.com/zh/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.claudenovo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.claudenovo.com/ko/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.claudenovo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.claudenovo.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.claudenovo.com/de/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.claudenovo.com/pt/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.claudenovo.com/it/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.claudenovo.com/ru/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://www.claudenovo.com/vi/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.claudenovo.com/id/" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.claudenovo.com/th/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.claudenovo.com/tr/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.claudenovo.com/nl/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://www.claudenovo.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.claudenovo.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.claudenovo.com/hi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.claudenovo.com/" />
+  </url>
+  <url>
+    <loc>https://www.claudenovo.com/ar/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.claudenovo.com/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.claudenovo.com/zh/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.claudenovo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.claudenovo.com/ko/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.claudenovo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.claudenovo.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.claudenovo.com/de/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.claudenovo.com/pt/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.claudenovo.com/it/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.claudenovo.com/ru/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://www.claudenovo.com/vi/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.claudenovo.com/id/" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.claudenovo.com/th/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.claudenovo.com/tr/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.claudenovo.com/nl/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://www.claudenovo.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.claudenovo.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.claudenovo.com/hi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.claudenovo.com/" />
+  </url>
+  <url>
+    <loc>https://www.claudenovo.com/hi/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.claudenovo.com/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.claudenovo.com/zh/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.claudenovo.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.claudenovo.com/ko/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.claudenovo.com/es/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.claudenovo.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.claudenovo.com/de/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.claudenovo.com/pt/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.claudenovo.com/it/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.claudenovo.com/ru/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://www.claudenovo.com/vi/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.claudenovo.com/id/" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.claudenovo.com/th/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.claudenovo.com/tr/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.claudenovo.com/nl/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://www.claudenovo.com/pl/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.claudenovo.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.claudenovo.com/hi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.claudenovo.com/" />
   </url>
   <url>
     <loc>https://www.claudenovo.com/privacy-policy.html</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.claudenovo.com/app.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
