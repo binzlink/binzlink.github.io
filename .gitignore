@@ -1,2 +1,9 @@
-.vscode/*
-.history/*
+# 默认忽略全部（源码、依赖、配置均不入库）
+*
+
+# 仅跟踪构建产物与 Pages 部署配置
+!.gitignore
+!.github/
+!.github/**
+!dist/
+!dist/**
