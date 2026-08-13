@@ -1,0 +1,24 @@
+type: "plugin"
+name: "Supabase"
+featured: true
+job:
+  en: "Query and manage a Supabase project"
+  zh: "查询和管理 Supabase 项目"
+description:
+  en: "Supabase MCP via plugin: SQL, auth, storage, and project management from Claude Code."
+  zh: "通过插件使用 Supabase MCP：在 Claude Code 里跑 SQL、管 auth/storage/项目。"
+install:
+  claude_code: "/plugin install supabase@claude-plugins-official"
+status: "unverified"
+risk:
+  needs_token: true
+  stdio: true
+  can_write_files: false
+  notes:
+    en: "Needs a Supabase access token. Can run SQL against your project. Use a restricted key."
+    zh: "需要 Supabase access token。能对项目执行 SQL。用最小权限密钥。"
+source:
+  github: "https://github.com/supabase-community/supabase-plugin"
+  marketplace: "claude-plugins-official"
+  homepage: "https://github.com/supabase-community/supabase-plugin"
+source_checked_at: "2026-08-13"

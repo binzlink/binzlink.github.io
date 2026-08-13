@@ -1,0 +1,46 @@
+---
+import type { Locale } from '../lib/catalog';
+import { ui } from '../lib/i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const copy = ui(locale);
+---
+
+<input
+  class="search"
+  type="search"
+  id="catalog-search"
+  placeholder={copy.searchPlaceholder}
+  autocomplete="off"
+/>
+<p class="hint">{copy.noJsSearch}</p>
+
+<script>
+  const input = document.getElementById('catalog-search') as HTMLInputElement | null;
+  if (input) {
+    input.addEventListener('input', () => {
+      const q = input.value.trim().toLowerCase();
+      const cards = document.querySelectorAll<HTMLElement>('[data-card]');
+      let shown = 0;
+      cards.forEach((card) => {
+        const hay = [
+          card.dataset.name,
+          card.dataset.jobEn,
+          card.dataset.jobZh,
+          card.dataset.type,
+        ]
+          .join(' ')
+          .toLowerCase();
+        const match = !q || hay.includes(q);
+        card.classList.toggle('hidden', !match);
+        if (match) shown += 1;
+      });
+      const empty = document.getElementById('search-empty');
+      if (empty) empty.classList.toggle('hidden', shown > 0);
+    });
+  }
+</script>

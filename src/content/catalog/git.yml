@@ -1,0 +1,25 @@
+type: "mcp"
+name: "Git"
+featured: false
+job:
+  en: "Inspect git history and status via MCP"
+  zh: "通过 MCP 查看 git 历史和状态"
+description:
+  en: |
+    Git MCP for log, status, and repo inspection. Claude Code already has git via Bash; this is for structured tool calls.
+  zh: "Git MCP，用于 log/status/仓库检查。Claude Code 本身就能用 Bash 调 git；这个提供结构化工具调用。"
+install:
+  claude_code: "claude mcp add git -- npx -y @modelcontextprotocol/server-git --repository /path/to/repo"
+status: "unverified"
+risk:
+  needs_token: false
+  stdio: true
+  can_write_files: true
+  notes:
+    en: |
+      Can run git in the given repo. Restrict the path. Prefer Claude Code's built-in git unless you need the MCP tool schema.
+    zh: "能在指定仓库跑 git。限制路径。除非需要 MCP 工具 schema，否则优先用 Claude Code 自带 git。"
+source:
+  github: "https://github.com/modelcontextprotocol/servers"
+  homepage: "https://github.com/modelcontextprotocol/servers"
+source_checked_at: "2026-08-13"

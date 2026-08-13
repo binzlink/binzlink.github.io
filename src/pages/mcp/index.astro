@@ -1,0 +1,8 @@
+---
+import ListPage from '../../components/ListPage.astro';
+import { itemsByType } from '../../lib/catalog';
+
+const items = await itemsByType('mcp');
+---
+
+<ListPage locale="en" type="mcp" items={items} />

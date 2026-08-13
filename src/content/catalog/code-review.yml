@@ -1,0 +1,23 @@
+type: "plugin"
+name: "Code Review"
+featured: true
+job:
+  en: "Review a pull request with specialized agents"
+  zh: "用专用 agent 做 PR review"
+description:
+  en: "Multi-agent PR review with confidence scoring to cut false positives."
+  zh: "多 agent PR 审查，带置信度打分，用来压假阳性。"
+install:
+  claude_code: "/plugin install code-review@claude-plugins-official"
+status: "unverified"
+risk:
+  needs_token: false
+  stdio: false
+  can_write_files: false
+  notes:
+    en: "Primarily reads diffs. May still request GitHub access if combined with the GitHub plugin."
+    zh: "主要读 diff。若同时装了 GitHub 插件，可能要仓库权限。"
+source:
+  github: "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/code-review"
+  marketplace: "claude-plugins-official"
+source_checked_at: "2026-08-13"

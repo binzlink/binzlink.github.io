@@ -1,0 +1,24 @@
+type: "plugin"
+name: "Atlassian"
+job:
+  en: "Work Jira issues and Confluence pages from Claude Code"
+  zh: "在 Claude Code 里处理 Jira 和 Confluence"
+description:
+  en: "Atlassian MCP: Jira and Confluence search, issue create, sprint and docs access."
+  zh: "Atlassian MCP：搜/建 Jira issue，访问 Confluence 与 sprint。"
+install:
+  claude_code: "/plugin install atlassian@claude-plugins-official"
+status: "unverified"
+risk:
+  needs_token: true
+  stdio: false
+  can_write_files: false
+  notes:
+    en: "Needs Atlassian OAuth. Can read and write Jira/Confluence in sites you connect."
+    zh: "需要 Atlassian OAuth。能读写你连接站点里的 Jira/Confluence。"
+source:
+  github: "https://github.com/atlassian/atlassian-mcp-server"
+  marketplace: "claude-plugins-official"
+  homepage: "https://github.com/atlassian/atlassian-mcp-server"
+source_checked_at: "2026-08-13"
+featured: false

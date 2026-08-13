@@ -1,0 +1,71 @@
+---
+import '../styles/global.css';
+import { ui } from '../lib/i18n';
+import { otherLocaleHref, type Locale } from '../lib/catalog';
+
+interface Props {
+  locale: Locale;
+  title: string;
+  description: string;
+  path: string;
+}
+
+const { locale, title, description, path } = Astro.props;
+const t = ui(locale);
+const canonical = new URL(path, Astro.site).href;
+const enPath = locale === 'en' ? path : path.replace(/^\/zh/, '') || '/';
+const zhPath = locale === 'zh' ? path : path === '/' ? '/zh/' : `/zh${path}`;
+const otherHref = otherLocaleHref(path, locale);
+const htmlLang = locale === 'zh' ? 'zh-CN' : 'en';
+---
+
+<!doctype html>
+<html lang={htmlLang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en" href={new URL(enPath, Astro.site).href} />
+    <link rel="alternate" hreflang="zh-CN" href={new URL(zhPath, Astro.site).href} />
+    <link rel="alternate" hreflang="x-default" href={new URL(enPath, Astro.site).href} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#101114" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ClaudeNovo" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href={locale === 'zh' ? '/zh/' : '/'}>{t.brand}</a>
+        <nav>
+          <a href={locale === 'zh' ? '/zh/plugins/' : '/plugins/'}>{t.navPlugins}</a>
+          <a href={locale === 'zh' ? '/zh/skills/' : '/skills/'}>{t.navSkills}</a>
+          <a href={locale === 'zh' ? '/zh/mcp/' : '/mcp/'}>{t.navMcp}</a>
+          <a href={locale === 'zh' ? '/zh/guides/skills-vs-mcp-vs-plugins/' : '/guides/skills-vs-mcp-vs-plugins/'}>{t.navGuide}</a>
+          <a class="lang" href={otherHref} hreflang={locale === 'en' ? 'zh-CN' : 'en'}>{t.switchLang}</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">
+        <span>{t.independent}</span>
+        <span>
+          <a href={locale === 'zh' ? '/zh/privacy-policy/' : '/privacy-policy/'}>{t.privacy}</a>
+        </span>
+      </div>
+    </footer>
+  </body>
+</html>

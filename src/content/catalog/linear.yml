@@ -1,0 +1,23 @@
+type: "plugin"
+name: "Linear"
+job:
+  en: "Create and update Linear issues from the coding session"
+  zh: "在编码会话里创建和更新 Linear issue"
+description:
+  en: "Linear issue tracking: create issues, manage projects, search workspaces."
+  zh: "Linear 问题跟踪：建 issue、管项目、搜工作区。"
+install:
+  claude_code: "/plugin install linear@claude-plugins-official"
+status: "unverified"
+risk:
+  needs_token: true
+  stdio: false
+  can_write_files: false
+  notes:
+    en: "Needs Linear API access. Can create and mutate issues in connected teams."
+    zh: "需要 Linear API。能在已连接团队里创建和改 issue。"
+source:
+  github: "https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/linear"
+  marketplace: "claude-plugins-official"
+source_checked_at: "2026-08-13"
+featured: false

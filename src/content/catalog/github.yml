@@ -1,0 +1,26 @@
+type: "plugin"
+name: "GitHub"
+featured: true
+job:
+  en: "Open PRs, issues, and review code on GitHub"
+  zh: "在 GitHub 上开 PR、管 issue、做 code review"
+description:
+  en: |
+    Official GitHub MCP wrapped as a Claude Code plugin. Create issues, manage pull requests, review code, and search repositories from the session.
+  zh: "官方 GitHub MCP 的 Claude Code 插件。在会话里创建 issue、管理 PR、做 review、搜索仓库。"
+install:
+  claude_code: "/plugin install github@claude-plugins-official"
+status: "unverified"
+risk:
+  needs_token: true
+  stdio: false
+  can_write_files: false
+  notes:
+    en: |
+      Needs a GitHub token or OAuth. Can create issues and PRs in repos you can access. Do not install unless you trust GitHub's MCP.
+    zh: "需要 GitHub token 或 OAuth。能在你有权限的仓库里创建 issue 和 PR。不信任就不要装。"
+source:
+  github: "https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/github"
+  marketplace: "claude-plugins-official"
+  homepage: "https://github.com/github/github-mcp-server"
+source_checked_at: "2026-08-13"

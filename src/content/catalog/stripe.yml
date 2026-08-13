@@ -1,0 +1,25 @@
+type: "plugin"
+name: "Stripe"
+featured: true
+job:
+  en: "Build Stripe checkout, billing, and webhooks in your app"
+  zh: "在应用里做 Stripe 结账、订阅和 webhook"
+description:
+  en: "Stripe's Claude Code plugin for integrating payments and billing in your codebase."
+  zh: "Stripe 官方 Claude Code 插件，用来在代码里接支付和账单。"
+install:
+  claude_code: "/plugin install stripe@claude-plugins-official"
+status: "unverified"
+risk:
+  needs_token: true
+  stdio: false
+  can_write_files: true
+  notes:
+    en: |
+      May use Stripe test or live keys. Never point a coding agent at live keys unless you intend to.
+    zh: "可能用到 Stripe 测试或正式密钥。不要把正式密钥交给 agent，除非你有意为之。"
+source:
+  github: "https://github.com/stripe/ai/tree/main/providers/claude/plugin"
+  marketplace: "claude-plugins-official"
+  homepage: "https://github.com/stripe/ai"
+source_checked_at: "2026-08-13"

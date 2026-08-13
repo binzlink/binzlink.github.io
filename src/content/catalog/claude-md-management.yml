@@ -1,0 +1,24 @@
+type: "plugin"
+name: "CLAUDE.md Management"
+job:
+  en: "Keep CLAUDE.md accurate after real sessions"
+  zh: "根据真实会话把 CLAUDE.md 写准"
+description:
+  en: "Audit CLAUDE.md quality, capture session learnings, and keep project memory current."
+  zh: "审计 CLAUDE.md、沉淀会话经验、保持项目记忆不过期。"
+install:
+  claude_code: "/plugin install claude-md-management@claude-plugins-official"
+status: "unverified"
+risk:
+  needs_token: false
+  stdio: false
+  can_write_files: true
+  notes:
+    en: "Edits CLAUDE.md and related memory files in the repo."
+    zh: "会改仓库里的 CLAUDE.md 和相关记忆文件。"
+source:
+  github: |
+    https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-md-management
+  marketplace: "claude-plugins-official"
+source_checked_at: "2026-08-13"
+featured: false

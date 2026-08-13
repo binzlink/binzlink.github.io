@@ -1,0 +1,69 @@
+---
+import Base from '../layouts/Base.astro';
+import CopyInstall from './CopyInstall.astro';
+import StatusBadge from './StatusBadge.astro';
+import type { CatalogItem, Locale } from '../lib/catalog';
+import { itemPath, t } from '../lib/catalog';
+import { ui } from '../lib/i18n';
+
+interface Props {
+  locale: Locale;
+  item: CatalogItem;
+}
+
+const { locale, item } = Astro.props;
+const copy = ui(locale);
+const d = item.data;
+const title = `${d.name} — ClaudeNovo`;
+const description = t(d.job, locale);
+const typeLabel = {
+  plugin: copy.typePlugin,
+  skill: copy.typeSkill,
+  mcp: copy.typeMcp,
+}[d.type];
+---
+
+<Base locale={locale} title={title} description={description} path={itemPath(item, locale)}>
+  <article class="wrap detail">
+    <div class="meta">
+      <span class="badge type">{typeLabel}</span>
+      <StatusBadge status={d.status} locale={locale} />
+    </div>
+    <h1>{d.name}</h1>
+    <p class="job">{t(d.job, locale)}</p>
+    <p>{t(d.description, locale)}</p>
+
+    <CopyInstall command={d.install.claude_code.trim()} locale={locale} />
+
+    <div class="facts">
+      <h2>{copy.latestCheck}</h2>
+      <ul>
+        {d.verified_at ? (
+          <li>{copy.verifiedOn}: {d.verified_at}</li>
+        ) : (
+          <li>{copy.neverVerified}</li>
+        )}
+        {d.source_checked_at && <li>{copy.sourceChecked}: {d.source_checked_at}</li>}
+        {d.source.marketplace && (
+          <li>{copy.marketplace}: {d.source.marketplace}</li>
+        )}
+        {d.source.github && (
+          <li><a href={d.source.github} rel="noopener noreferrer">{copy.source}</a></li>
+        )}
+        {d.source.homepage && d.source.homepage !== d.source.github && (
+          <li><a href={d.source.homepage} rel="noopener noreferrer">{copy.homepage}</a></li>
+        )}
+      </ul>
+    </div>
+
+    <div class="risk">
+      <h2>{copy.risk}</h2>
+      <ul>
+        {d.risk.needs_token && <li>{copy.needsToken}</li>}
+        {d.risk.stdio && <li>{copy.stdio}</li>}
+        {d.risk.can_write_files && <li>{copy.canWrite}</li>}
+      </ul>
+      <p>{t(d.risk.notes, locale)}</p>
+    </div>
+  </article>
+</Base>

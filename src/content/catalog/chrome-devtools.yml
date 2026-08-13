@@ -1,0 +1,24 @@
+type: "mcp"
+name: "Chrome DevTools"
+featured: false
+job:
+  en: "Inspect a live Chrome tab: network, console, performance"
+  zh: "检查正在运行的 Chrome：网络、控制台、性能"
+description:
+  en: |
+    Chrome DevTools MCP to drive and inspect a live browser. Also listed as chrome-devtools-mcp in the official plugin marketplace.
+  zh: "Chrome DevTools MCP，驱动并检查活的浏览器。官方插件市场里也有 chrome-devtools-mcp。"
+install:
+  claude_code: "/plugin install chrome-devtools-mcp@claude-plugins-official"
+status: "unverified"
+risk:
+  needs_token: false
+  stdio: true
+  can_write_files: false
+  notes:
+    en: "Attaches to a real browser. Can see pages you have open, including authenticated sessions."
+    zh: "会附着到真实浏览器。能看到你已打开的页面，包括已登录会话。"
+source:
+  github: "https://github.com/ChromeDevTools/chrome-devtools-mcp"
+  homepage: "https://github.com/ChromeDevTools/chrome-devtools-mcp"
+source_checked_at: "2026-08-13"

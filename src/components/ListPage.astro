@@ -1,0 +1,42 @@
+---
+import Base from '../layouts/Base.astro';
+import CatalogSearch from './CatalogSearch.astro';
+import ItemCard from './ItemCard.astro';
+import type { CatalogItem, ItemType, Locale } from '../lib/catalog';
+import { listPath } from '../lib/catalog';
+import { ui } from '../lib/i18n';
+
+interface Props {
+  locale: Locale;
+  type: ItemType;
+  items: CatalogItem[];
+}
+
+const { locale, type, items } = Astro.props;
+const copy = ui(locale);
+const titleMap = {
+  plugin: copy.navPlugins,
+  skill: copy.navSkills,
+  mcp: copy.navMcp,
+};
+const leadMap = {
+  plugin: copy.pluginsLead,
+  skill: copy.skillsLead,
+  mcp: copy.mcpLead,
+};
+const title = `${titleMap[type]} — ClaudeNovo`;
+---
+
+<Base locale={locale} title={title} description={leadMap[type]} path={listPath(type, locale)}>
+  <div class="wrap">
+    <header class="page-head">
+      <h1>{titleMap[type]}</h1>
+      <p>{leadMap[type]} {copy.counts(items.length)}.</p>
+    </header>
+    <CatalogSearch locale={locale} />
+    <p id="search-empty" class="hint hidden">{copy.searchEmpty}</p>
+    <div class="grid">
+      {items.map((item) => <ItemCard item={item} locale={locale} />)}
+    </div>
+  </div>
+</Base>

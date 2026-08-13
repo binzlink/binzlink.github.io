@@ -1,0 +1,29 @@
+type: "skill"
+name: "MCP Builder"
+featured: true
+job:
+  en: "Scaffold a working MCP server from a prompt"
+  zh: "用一句话脚手架生成可用的 MCP server"
+description:
+  en: |
+    Anthropic example skill for generating MCP servers (tool defs, schemas, transport). Bundled in `example-skills` from anthropics/skills.
+  zh: |
+    Anthropic 示例 skill：生成 MCP server（工具定义、schema、传输层）。 包含在 anthropics/skills 的 `example-skills` 插件包里。
+install:
+  claude_code: |
+    /plugin marketplace add anthropics/skills
+    /plugin install example-skills@anthropic-agent-skills
+status: "unverified"
+risk:
+  needs_token: false
+  stdio: false
+  can_write_files: true
+  notes:
+    en: |
+      Skills are markdown plus optional scripts. They can instruct Claude to write files. Review SKILL.md before use.
+    zh: "Skill 是 markdown 加可选脚本，会指示 Claude 写文件。用前先读 SKILL.md。"
+source:
+  github: "https://github.com/anthropics/skills/tree/main/skills/mcp-builder"
+  marketplace: "anthropic-agent-skills"
+  homepage: "https://github.com/anthropics/skills"
+source_checked_at: "2026-08-13"

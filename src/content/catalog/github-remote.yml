@@ -1,0 +1,24 @@
+type: "mcp"
+name: "GitHub (remote MCP)"
+featured: false
+job:
+  en: "Talk to GitHub over the hosted MCP endpoint"
+  zh: "通过托管 MCP 接入 GitHub"
+description:
+  en: "GitHub's remote MCP (Copilot API). Alternative to the official Claude Code GitHub plugin."
+  zh: "GitHub 远程 MCP（Copilot API）。官方 Claude Code GitHub 插件之外的接入方式。"
+install:
+  claude_code: "claude mcp add --transport http github https://api.githubcopilot.com/mcp/"
+status: "unverified"
+risk:
+  needs_token: true
+  stdio: false
+  can_write_files: false
+  notes:
+    en: |
+      Needs a GitHub token in headers. Hosted endpoint sees your requests. Prefer the GitHub plugin if you already use claude-plugins-official.
+    zh: "请求头里要带 GitHub token。托管端点能看到你的请求。若已用官方插件市场，优先装 GitHub 插件。"
+source:
+  github: "https://github.com/github/github-mcp-server"
+  homepage: "https://github.com/github/github-mcp-server"
+source_checked_at: "2026-08-13"

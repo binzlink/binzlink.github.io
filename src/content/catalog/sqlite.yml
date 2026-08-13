@@ -1,0 +1,23 @@
+type: "mcp"
+name: "SQLite"
+featured: false
+job:
+  en: "Query a local SQLite database"
+  zh: "查询本地 SQLite 数据库"
+description:
+  en: "SQLite MCP for local .sqlite files."
+  zh: "针对本地 .sqlite 文件的 MCP。"
+install:
+  claude_code: "claude mcp add sqlite -- npx -y @modelcontextprotocol/server-sqlite /path/to/db.sqlite"
+status: "unverified"
+risk:
+  needs_token: false
+  stdio: true
+  can_write_files: true
+  notes:
+    en: "Can mutate the database file. Snapshot first. Do not point at production DB files."
+    zh: "能改数据库文件。先备份。不要指向生产库。"
+source:
+  github: "https://github.com/modelcontextprotocol/servers"
+  homepage: "https://github.com/modelcontextprotocol/servers"
+source_checked_at: "2026-08-13"

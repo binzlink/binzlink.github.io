@@ -1,0 +1,28 @@
+type: "skill"
+name: "XLSX"
+featured: false
+job:
+  en: "Build and analyze spreadsheets"
+  zh: "做表、算表"
+description:
+  en: |
+    Document skill for .xlsx creation and analysis. Bundled in `document-skills` from anthropics/skills.
+  zh: "用于创建和分析 .xlsx 的文档 skill。 包含在 anthropics/skills 的 `document-skills` 插件包里。"
+install:
+  claude_code: |
+    /plugin marketplace add anthropics/skills
+    /plugin install document-skills@anthropic-agent-skills
+status: "unverified"
+risk:
+  needs_token: false
+  stdio: false
+  can_write_files: true
+  notes:
+    en: |
+      Skills are markdown plus optional scripts. They can instruct Claude to write files. Review SKILL.md before use.
+    zh: "Skill 是 markdown 加可选脚本，会指示 Claude 写文件。用前先读 SKILL.md。"
+source:
+  github: "https://github.com/anthropics/skills/tree/main/skills/xlsx"
+  marketplace: "anthropic-agent-skills"
+  homepage: "https://github.com/anthropics/skills"
+source_checked_at: "2026-08-13"

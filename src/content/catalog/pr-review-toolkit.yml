@@ -1,0 +1,24 @@
+type: "plugin"
+name: "PR Review Toolkit"
+job:
+  en: "Review PRs for tests, types, errors, and comments"
+  zh: "从测试、类型、错误处理和评论角度审 PR"
+description:
+  en: |
+    Specialized PR review agents for comments, tests, error handling, type design, and simplification.
+  zh: "针对评论、测试、错误处理、类型设计和简化的专用 PR 审查 agent。"
+install:
+  claude_code: "/plugin install pr-review-toolkit@claude-plugins-official"
+status: "unverified"
+risk:
+  needs_token: false
+  stdio: false
+  can_write_files: false
+  notes:
+    en: "Reads code and may post review comments if GitHub/GitLab plugins are also enabled."
+    zh: "读代码；若同时启用 GitHub/GitLab 插件，可能会发 review 评论。"
+source:
+  github: "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/pr-review-toolkit"
+  marketplace: "claude-plugins-official"
+source_checked_at: "2026-08-13"
+featured: false

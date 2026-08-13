@@ -1,0 +1,24 @@
+type: "plugin"
+name: "Claude Security"
+job:
+  en: "Scan your own code for vulnerabilities inside the session"
+  zh: "在会话里扫描自己代码的漏洞"
+description:
+  en: |
+    In-session vulnerability scanning with findings challenged before report, then verified patches.
+  zh: "会话内漏洞扫描：先质疑发现再报告，再生成并验证补丁。"
+install:
+  claude_code: "/plugin install claude-security@claude-plugins-official"
+status: "unverified"
+risk:
+  needs_token: false
+  stdio: false
+  can_write_files: true
+  notes:
+    en: "Reads your source and may write patches. Not a substitute for a dedicated SAST vendor."
+    zh: "会读源码，也可能写补丁。不能替代专业 SAST。"
+source:
+  github: "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-security"
+  marketplace: "claude-plugins-official"
+source_checked_at: "2026-08-13"
+featured: false

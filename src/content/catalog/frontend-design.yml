@@ -1,0 +1,24 @@
+type: "plugin"
+name: "Frontend Design"
+featured: true
+job:
+  en: "Ship distinctive production UI instead of generic AI layouts"
+  zh: "做出不像套模板的生产级前端界面"
+description:
+  en: |
+    Anthropic plugin for production-grade frontend interfaces. Pushes for distinctive layout, type, and motion instead of generic AI aesthetics.
+  zh: "Anthropic 的前端设计插件。偏向独特排版与动效，避免千篇一律的 AI 界面。"
+install:
+  claude_code: "/plugin install frontend-design@claude-plugins-official"
+status: "unverified"
+risk:
+  needs_token: false
+  stdio: false
+  can_write_files: true
+  notes:
+    en: "Writes frontend code in your repo. Review diffs like any other agent edit."
+    zh: "会在仓库里写前端代码。像对待其他 agent 改动一样审查 diff。"
+source:
+  github: "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/frontend-design"
+  marketplace: "claude-plugins-official"
+source_checked_at: "2026-08-13"

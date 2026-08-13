@@ -1,0 +1,26 @@
+type: "plugin"
+name: "Playwright"
+featured: true
+job:
+  en: "Drive a real browser for tests and screenshots"
+  zh: "用真浏览器跑测试和截图"
+description:
+  en: "Microsoft Playwright MCP as a Claude Code plugin: click, fill, screenshot, e2e flows."
+  zh: "微软 Playwright MCP 的 Claude Code 插件：点击、填表、截图、跑 e2e。"
+install:
+  claude_code: "/plugin install playwright@claude-plugins-official"
+status: "unverified"
+risk:
+  needs_token: false
+  stdio: true
+  can_write_files: true
+  notes:
+    en: |
+      Spawns a local browser. Can navigate arbitrary URLs and write test files. Isolate credentials.
+    zh: "会在本地拉起浏览器。能打开任意 URL 并写测试文件。凭据要隔离。"
+source:
+  github: |
+    https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/playwright
+  marketplace: "claude-plugins-official"
+  homepage: "https://github.com/microsoft/playwright-mcp"
+source_checked_at: "2026-08-13"

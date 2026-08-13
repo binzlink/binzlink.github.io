@@ -1,0 +1,24 @@
+type: "mcp"
+name: "Memory"
+featured: false
+job:
+  en: "Persist notes across Claude Code sessions"
+  zh: "跨会话保存笔记"
+description:
+  en: "Knowledge-graph memory MCP so Claude can store and recall facts between sessions."
+  zh: "知识图谱记忆 MCP，让 Claude 跨会话记住事实。"
+install:
+  claude_code: "claude mcp add memory -- npx -y @modelcontextprotocol/server-memory"
+status: "unverified"
+risk:
+  needs_token: false
+  stdio: true
+  can_write_files: true
+  notes:
+    en: |
+      Writes a local memory store. May retain secrets if you paste them into chat. Inspect the store periodically.
+    zh: "会写本地记忆文件。聊天里贴过的密钥可能被留下。定期检查存储。"
+source:
+  github: "https://github.com/modelcontextprotocol/servers"
+  homepage: "https://github.com/modelcontextprotocol/servers"
+source_checked_at: "2026-08-13"

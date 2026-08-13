@@ -1,9 +1,33 @@
-# 默认忽略全部（源码、依赖、配置均不入库）
-*
+node_modules/
+dist/
+.astro/
+.DS_Store
+*.log
+.env
+.env.*
 
-# 仅跟踪构建产物与 Pages 部署配置
-!.gitignore
-!.github/
-!.github/**
-!dist/
-!dist/**
+# leftover vector editor — not published
+src/editor/
+src/main-app.tsx
+src/main-design.tsx
+src/vite-env.d.ts
+vite.config.ts
+tsconfig.app.json
+tsconfig.node.json
+landing/
+native/
+docker/
+Dockerfile
+docker-compose.yml
+.dockerignore
+.oxlintrc.json
+/index.html
+/app.html
+/design.html
+/CNAME
+docs/plugins.md
+scripts/bench-drag-hotpath.mjs
+scripts/ensure-engine.mjs
+scripts/generate-landing.mjs
+src/assets/
+src/index.css

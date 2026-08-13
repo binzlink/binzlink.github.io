@@ -1,0 +1,24 @@
+type: "mcp"
+name: "Sequential Thinking"
+featured: false
+job:
+  en: "Force a structured multi-step reasoning trace"
+  zh: "强制走出结构化的多步推理"
+description:
+  en: "MCP that exposes a sequential thinking tool for longer planning traces."
+  zh: "提供 sequential thinking 工具的 MCP，适合更长的规划轨迹。"
+install:
+  claude_code: |
+    claude mcp add sequential-thinking -- npx -y @modelcontextprotocol/server-sequential-thinking
+status: "unverified"
+risk:
+  needs_token: false
+  stdio: true
+  can_write_files: false
+  notes:
+    en: "Local stdio process. No credentials. Burns extra tokens for the thinking trace."
+    zh: "本地 stdio 进程，无凭据。思考轨迹会多耗 token。"
+source:
+  github: "https://github.com/modelcontextprotocol/servers"
+  homepage: "https://github.com/modelcontextprotocol/servers"
+source_checked_at: "2026-08-13"

@@ -1,0 +1,24 @@
+type: "plugin"
+name: "Plugin Dev"
+job:
+  en: "Build and validate a Claude Code plugin"
+  zh: "开发并校验 Claude Code 插件"
+description:
+  en: |
+    Toolkit for plugin authors: hooks, MCP integration, commands, agents, and validation skills.
+  zh: "给插件作者用的工具包：hooks、MCP 集成、commands、agents，以及校验技能。"
+install:
+  claude_code: "/plugin install plugin-dev@claude-plugins-official"
+status: "unverified"
+risk:
+  needs_token: false
+  stdio: false
+  can_write_files: true
+  notes:
+    en: "Creates plugin files in your working tree. No third-party network by default."
+    zh: "会在工作区生成插件文件。默认不连第三方网络。"
+source:
+  github: "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/plugin-dev"
+  marketplace: "claude-plugins-official"
+source_checked_at: "2026-08-13"
+featured: false

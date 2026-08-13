@@ -1,0 +1,26 @@
+type: "plugin"
+name: "Slack"
+job:
+  en: "Search Slack threads while coding"
+  zh: "写代码时搜索 Slack 讨论"
+description:
+  en: |
+    Slack plugin to search messages, channels, and threads for context without leaving Claude Code.
+  zh: "Slack 插件：不离开 Claude Code 就能搜消息、频道和线程。"
+install:
+  claude_code: "/plugin install slack@claude-plugins-official"
+status: "unverified"
+risk:
+  needs_token: true
+  stdio: false
+  can_write_files: false
+  notes:
+    en: |
+      Needs Slack OAuth. Can read workspace messages you authorize. Do not grant write unless you need it.
+    zh: "需要 Slack OAuth。能读你授权的工作区消息。不需要写权限就不要开。"
+source:
+  github: "https://github.com/slackapi/slack-mcp-plugin"
+  marketplace: "claude-plugins-official"
+  homepage: "https://github.com/slackapi/slack-mcp-plugin"
+source_checked_at: "2026-08-13"
+featured: false

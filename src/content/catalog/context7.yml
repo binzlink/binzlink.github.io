@@ -1,0 +1,24 @@
+type: "plugin"
+name: "Context7"
+job:
+  en: "Pull current library docs into context"
+  zh: "把当前版本的库文档拉进上下文"
+description:
+  en: "Upstash Context7 remote MCP for version-specific documentation. No local Node required."
+  zh: "Upstash Context7 远程 MCP，拉取指定版本文档。不需要本地 Node。"
+install:
+  claude_code: "/plugin install context7@claude-plugins-official"
+status: "unverified"
+risk:
+  needs_token: false
+  stdio: false
+  can_write_files: false
+  notes:
+    en: "Talks to a hosted MCP (mcp.context7.com). Sends library names you look up to that service."
+    zh: "连接托管 MCP（mcp.context7.com）。你查询的库名会发给该服务。"
+source:
+  github: "https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/context7"
+  marketplace: "claude-plugins-official"
+  homepage: "https://context7.com"
+source_checked_at: "2026-08-13"
+featured: false

@@ -1,0 +1,24 @@
+type: "mcp"
+name: "Filesystem"
+featured: false
+job:
+  en: "Read and write files outside the project root"
+  zh: "读写项目根目录之外的文件"
+description:
+  en: "Filesystem MCP with an allowlist of directories. Powerful and easy to over-grant."
+  zh: "带目录白名单的文件系统 MCP。能力强，也很容易授权过大。"
+install:
+  claude_code: |
+    claude mcp add filesystem -- npx -y @modelcontextprotocol/server-filesystem /path/you/allow
+status: "unverified"
+risk:
+  needs_token: false
+  stdio: true
+  can_write_files: true
+  notes:
+    en: "Can read and overwrite any path you pass. Never point this at $HOME. Use a narrow folder."
+    zh: "能读写你传入的任何路径。不要指向 $HOME。只放一个窄目录。"
+source:
+  github: "https://github.com/modelcontextprotocol/servers"
+  homepage: "https://github.com/modelcontextprotocol/servers"
+source_checked_at: "2026-08-13"

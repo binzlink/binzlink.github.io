@@ -1,0 +1,23 @@
+type: "plugin"
+name: "Feature Dev"
+job:
+  en: "Explore a codebase, design a feature, then implement it"
+  zh: "摸清代码库、设计功能、再落地实现"
+description:
+  en: "Workflow plugin with agents for codebase exploration, architecture, and quality review."
+  zh: "带探索、架构与质量审查 agent 的功能开发工作流插件。"
+install:
+  claude_code: "/plugin install feature-dev@claude-plugins-official"
+status: "unverified"
+risk:
+  needs_token: false
+  stdio: false
+  can_write_files: true
+  notes:
+    en: "Reads and writes your project. Treat it as a powerful pair-programmer, not a sandbox."
+    zh: "会读、会写你的项目。当成强力结对，不是沙箱。"
+source:
+  github: "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/feature-dev"
+  marketplace: "claude-plugins-official"
+source_checked_at: "2026-08-13"
+featured: false

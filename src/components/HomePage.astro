@@ -1,0 +1,40 @@
+---
+import Base from '../layouts/Base.astro';
+import CatalogSearch from './CatalogSearch.astro';
+import ItemCard from './ItemCard.astro';
+import type { CatalogItem, Locale } from '../lib/catalog';
+import { ui } from '../lib/i18n';
+
+interface Props {
+  locale: Locale;
+  featured: CatalogItem[];
+  items: CatalogItem[];
+}
+
+const { locale, featured, items } = Astro.props;
+const copy = ui(locale);
+const path = locale === 'zh' ? '/zh/' : '/';
+---
+
+<Base locale={locale} title={`ClaudeNovo — ${copy.tagline}`} description={copy.tagline} path={path}>
+  <div class="wrap">
+    <section class="hero">
+      <h1>{copy.tagline}</h1>
+      <p class="lead">{copy.trustNote}</p>
+      <p class="disclaimer">{copy.independent}</p>
+    </section>
+
+    <CatalogSearch locale={locale} />
+
+    <p class="section-title">{copy.featured}</p>
+    <div class="grid">
+      {featured.map((item) => <ItemCard item={item} locale={locale} />)}
+    </div>
+
+    <p class="section-title">{copy.all} · {copy.counts(items.length)}</p>
+    <p id="search-empty" class="hint hidden">{copy.searchEmpty}</p>
+    <div class="grid">
+      {items.map((item) => <ItemCard item={item} locale={locale} />)}
+    </div>
+  </div>
+</Base>

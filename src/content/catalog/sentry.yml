@@ -1,0 +1,24 @@
+type: "plugin"
+name: "Sentry"
+job:
+  en: "Pull production errors into the coding session"
+  zh: "把线上报错拉进编码会话"
+description:
+  en: "Sentry plugin: error reports, stack traces, and issue search from Claude Code."
+  zh: "Sentry 插件：在 Claude Code 里看报错、堆栈和 issue。"
+install:
+  claude_code: "/plugin install sentry@claude-plugins-official"
+status: "unverified"
+risk:
+  needs_token: true
+  stdio: false
+  can_write_files: false
+  notes:
+    en: "Needs a Sentry token. Can read error payloads which may contain user data."
+    zh: "需要 Sentry token。能读到可能含用户数据的错误内容。"
+source:
+  github: "https://github.com/getsentry/plugin-claude"
+  marketplace: "claude-plugins-official"
+  homepage: "https://github.com/getsentry/plugin-claude"
+source_checked_at: "2026-08-13"
+featured: false

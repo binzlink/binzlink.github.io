@@ -1,0 +1,24 @@
+type: "plugin"
+name: "Figma"
+job:
+  en: "Read Figma files and turn frames into code"
+  zh: "读取 Figma 文件并把画板变成代码"
+description:
+  en: "Figma plugin: access files, extract components and tokens, translate designs into code."
+  zh: "Figma 插件：读文件、抽组件和 token、把设计翻成代码。"
+install:
+  claude_code: "/plugin install figma@claude-plugins-official"
+status: "unverified"
+risk:
+  needs_token: true
+  stdio: false
+  can_write_files: true
+  notes:
+    en: "Needs Figma access. Reads design files and writes code locally. Review generated UI."
+    zh: "需要 Figma 权限。读设计文件并在本地写代码。生成的 UI 要自己看。"
+source:
+  github: "https://github.com/figma/mcp-server-guide"
+  marketplace: "claude-plugins-official"
+  homepage: "https://github.com/figma/mcp-server-guide"
+source_checked_at: "2026-08-13"
+featured: false

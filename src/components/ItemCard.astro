@@ -1,0 +1,28 @@
+---
+import type { CatalogItem, Locale } from '../lib/catalog';
+import { itemPath, t, typePath } from '../lib/catalog';
+import { ui } from '../lib/i18n';
+import StatusBadge from './StatusBadge.astro';
+
+interface Props {
+  item: CatalogItem;
+  locale: Locale;
+}
+
+const { item, locale } = Astro.props;
+const copy = ui(locale);
+const typeLabel = {
+  plugin: copy.typePlugin,
+  skill: copy.typeSkill,
+  mcp: copy.typeMcp,
+}[item.data.type];
+---
+
+<a class="card" data-card href={itemPath(item, locale)} data-name={item.data.name.toLowerCase()} data-job-en={item.data.job.en.toLowerCase()} data-job-zh={item.data.job.zh.toLowerCase()} data-type={typePath[item.data.type]}>
+  <div class="meta">
+    <span class="badge type">{typeLabel}</span>
+    <StatusBadge status={item.data.status} locale={locale} />
+  </div>
+  <h3>{item.data.name}</h3>
+  <p class="job">{t(item.data.job, locale)}</p>
+</a>

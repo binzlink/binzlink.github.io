@@ -1,0 +1,28 @@
+type: "skill"
+name: "Brand Guidelines"
+featured: false
+job:
+  en: "Apply a brand system to generated output"
+  zh: "让生成结果符合品牌规范"
+description:
+  en: |
+    Example skill that applies brand guidelines to Claude's output. Bundled in `example-skills` from anthropics/skills.
+  zh: "把品牌规范套到 Claude 输出上的示例 skill。 包含在 anthropics/skills 的 `example-skills` 插件包里。"
+install:
+  claude_code: |
+    /plugin marketplace add anthropics/skills
+    /plugin install example-skills@anthropic-agent-skills
+status: "unverified"
+risk:
+  needs_token: false
+  stdio: false
+  can_write_files: true
+  notes:
+    en: |
+      Skills are markdown plus optional scripts. They can instruct Claude to write files. Review SKILL.md before use.
+    zh: "Skill 是 markdown 加可选脚本，会指示 Claude 写文件。用前先读 SKILL.md。"
+source:
+  github: "https://github.com/anthropics/skills/tree/main/skills/brand-guidelines"
+  marketplace: "anthropic-agent-skills"
+  homepage: "https://github.com/anthropics/skills"
+source_checked_at: "2026-08-13"

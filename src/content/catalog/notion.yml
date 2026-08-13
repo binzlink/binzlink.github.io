@@ -1,0 +1,25 @@
+type: "plugin"
+name: "Notion"
+featured: true
+job:
+  en: "Search and update Notion pages and databases"
+  zh: "搜索并更新 Notion 页面和数据库"
+description:
+  en: "Notion workspace plugin: search pages, edit docs, manage databases from Claude Code."
+  zh: "Notion 工作区插件：在 Claude Code 里搜页面、改文档、管数据库。"
+install:
+  claude_code: "/plugin install notion@claude-plugins-official"
+status: "unverified"
+risk:
+  needs_token: true
+  stdio: false
+  can_write_files: false
+  notes:
+    en: |
+      Needs Notion OAuth. Can read and write workspace content you grant. Treat as production access.
+    zh: "需要 Notion OAuth。能读写你授权的工作区内容，等同生产权限。"
+source:
+  github: "https://github.com/makenotion/claude-code-notion-plugin"
+  marketplace: "claude-plugins-official"
+  homepage: "https://github.com/makenotion/claude-code-notion-plugin"
+source_checked_at: "2026-08-13"

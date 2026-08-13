@@ -1,0 +1,25 @@
+type: "mcp"
+name: "PostgreSQL"
+featured: true
+job:
+  en: "Run SQL against a Postgres database"
+  zh: "对 Postgres 跑 SQL"
+description:
+  en: |
+    Reference Postgres MCP server. Point it at a connection string; Claude can list schemas and run queries.
+  zh: "Postgres 参考 MCP。配上连接串后，Claude 可以列 schema、跑查询。"
+install:
+  claude_code: "claude mcp add postgres -- npx -y @modelcontextprotocol/server-postgres \"$DATABASE_URL\""
+status: "unverified"
+risk:
+  needs_token: true
+  stdio: true
+  can_write_files: false
+  notes:
+    en: |
+      Uses a database URL. A writable role can DROP tables. Use a read-only user unless you intend writes.
+    zh: "使用数据库连接串。可写账号能 DROP 表。除非有意写入，否则用只读用户。"
+source:
+  github: "https://github.com/modelcontextprotocol/servers"
+  homepage: "https://github.com/modelcontextprotocol/servers"
+source_checked_at: "2026-08-13"

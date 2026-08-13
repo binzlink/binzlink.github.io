@@ -1,0 +1,19 @@
+---
+import type { Locale } from '../lib/catalog';
+import { ui } from '../lib/i18n';
+
+interface Props {
+  status: 'works' | 'broken' | 'unverified';
+  locale: Locale;
+}
+
+const { status, locale } = Astro.props;
+const copy = ui(locale);
+const label = {
+  works: copy.statusWorks,
+  broken: copy.statusBroken,
+  unverified: copy.statusUnverified,
+}[status];
+---
+
+<span class={`badge ${status}`}>{label}</span>

@@ -1,0 +1,74 @@
+---
+import Base from '../layouts/Base.astro';
+import type { Locale } from '../lib/catalog';
+import { locPath } from '../lib/catalog';
+import { ui } from '../lib/i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const copy = ui(locale);
+const path = locPath('/guides/skills-vs-mcp-vs-plugins/', locale);
+---
+
+<Base locale={locale} title={`${copy.guideTitle} — ClaudeNovo`} description={copy.guideLead} path={path}>
+  <article class="wrap prose">
+    {locale === 'zh' ? (
+      <>
+        <h1>Skills、MCP、插件有何不同</h1>
+        <p>Claude Code 有三种常见扩展。它们解决不同的问题，安装方式也不一样。选错了，不是「功能少一点」，而是装了一个根本不该装的进程，或者写了一堆 Claude 本来就会的说明。</p>
+
+        <h2>Skill</h2>
+        <p>Skill 是文件。核心是带 YAML 头的 <strong>SKILL.md</strong>，外加可选脚本和资源。Claude 在任务匹配时把说明加载进上下文。它不提供新的外部能力，只规定「按你们的方式做」。</p>
+        <p>适合：团队规范、可重复工作流、文档模板、code review 清单。安装：放进 <code>.claude/skills/</code>，或通过插件包安装。</p>
+
+        <h2>MCP</h2>
+        <p>MCP 是进程。它用 Model Context Protocol 向外暴露<strong>工具</strong>（Claude 可调用的函数）、<strong>资源</strong>和提示。要跑起来，通常要本地 stdio 或远程 HTTP，还经常要 token。</p>
+        <p>适合：GitHub、数据库、Notion、浏览器这类「连到外部系统」。安装：<code>claude mcp add</code>，或写进 <code>.mcp.json</code>。</p>
+        <p>代价：已连接的 MCP 会把工具定义塞进上下文，即使用不到。少连、按任务连。</p>
+
+        <h2>插件</h2>
+        <p>插件是安装包。它可以打包 skills、slash commands、agents、hooks，以及 MCP。官方市场是 <code>claude-plugins-official</code>，用 <code>/plugin install name@claude-plugins-official</code>。</p>
+        <p>适合：你想要「一条命令装齐」而不是手改 JSON。插件可以只是一堆 skills，也可以把一个 MCP 包进来。</p>
+
+        <h2>怎么选</h2>
+        <ul>
+          <li>只要 Claude <strong>按你们的流程做事</strong> → Skill</li>
+          <li>要 Claude <strong>碰到外部系统</strong>（API、数据库、浏览器）→ MCP</li>
+          <li>要别人也能一条命令装上，或要把 skill 和 MCP 绑在一起 → 插件</li>
+        </ul>
+        <p>Anthropic 自己的说法也是这个分工：MCP 负责连接，Skills 负责专长。插件是分发层。</p>
+        <p>本站每条都写成一个<strong>任务</strong>（job），并给出 Claude Code 的安装命令。未验证的条目不会标成「可用」。</p>
+      </>
+    ) : (
+      <>
+        <h1>Skills vs MCP vs plugins</h1>
+        <p>Claude Code has three common extension types. They solve different jobs and install differently. The wrong pick is not “slightly fewer features” — it is a process you should never have spawned, or a pile of instructions Claude already knew.</p>
+
+        <h2>Skill</h2>
+        <p>A skill is files. The core is a <strong>SKILL.md</strong> with YAML frontmatter, plus optional scripts. Claude loads the text when the job matches. It does not add new external capabilities; it specifies how to do the work your way.</p>
+        <p>Use it for team conventions, repeatable workflows, document templates, review checklists. Install by dropping it in <code>.claude/skills/</code> or via a plugin bundle.</p>
+
+        <h2>MCP</h2>
+        <p>An MCP server is a process. It exposes <strong>tools</strong> (functions Claude can call), <strong>resources</strong>, and prompts over the Model Context Protocol. Something has to run — local stdio or remote HTTP — and it often needs a token.</p>
+        <p>Use it to reach GitHub, a database, Notion, a browser. Install with <code>claude mcp add</code> or a <code>.mcp.json</code> entry.</p>
+        <p>Cost: connected MCP servers inject tool schemas into context even when unused. Connect few, connect per task.</p>
+
+        <h2>Plugin</h2>
+        <p>A plugin is a package. It can bundle skills, slash commands, agents, hooks, and MCP servers. The official marketplace is <code>claude-plugins-official</code>; install with <code>/plugin install name@claude-plugins-official</code>.</p>
+        <p>Use it when you want one command instead of hand-editing JSON, or when a skill and an MCP should ship together.</p>
+
+        <h2>How to choose</h2>
+        <ul>
+          <li>You want Claude to <strong>follow your procedure</strong> → skill</li>
+          <li>You want Claude to <strong>reach an external system</strong> → MCP</li>
+          <li>You want a shareable one-command install, or to bind skills and MCP together → plugin</li>
+        </ul>
+        <p>Anthropic’s own split: MCP is connectivity; skills are expertise. Plugins are distribution.</p>
+        <p>Every entry on this site is framed as a <strong>job</strong>, with a Claude Code install command. Unverified entries are never marked as working.</p>
+      </>
+    )}
+  </article>
+</Base>
