@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import JsonLd from './JsonLd.astro';
 import { locPath, type Locale } from '../lib/catalog';
 import { ui } from '../lib/i18n';
 
@@ -11,9 +12,38 @@ const { locale } = Astro.props;
 const copy = ui(locale);
 const g = copy.guide;
 const path = locPath('/guides/skills-vs-mcp-vs-plugins/', locale);
+const title = `${copy.guideTitle} | Claude Code | ClaudeNovo`;
 ---
 
-<Base locale={locale} title={`${copy.guideTitle} — ClaudeNovo`} description={copy.guideLead} path={path}>
+<Base locale={locale} title={title} description={copy.guideLead} path={path}>
+  <JsonLd
+    data={{
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: g.skillH,
+          acceptedAnswer: { '@type': 'Answer', text: `${g.skillP1} ${g.skillP2}` },
+        },
+        {
+          '@type': 'Question',
+          name: g.mcpH,
+          acceptedAnswer: { '@type': 'Answer', text: `${g.mcpP1} ${g.mcpP2}` },
+        },
+        {
+          '@type': 'Question',
+          name: g.pluginH,
+          acceptedAnswer: { '@type': 'Answer', text: `${g.pluginP1} ${g.pluginP2}` },
+        },
+        {
+          '@type': 'Question',
+          name: g.chooseH,
+          acceptedAnswer: { '@type': 'Answer', text: g.choose.join(' ') },
+        },
+      ],
+    }}
+  />
   <article class="wrap prose">
     <h1>{copy.guideTitle}</h1>
     <p>{g.intro}</p>

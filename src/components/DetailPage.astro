@@ -1,9 +1,10 @@
 ---
 import Base from '../layouts/Base.astro';
 import CopyInstall from './CopyInstall.astro';
+import JsonLd from './JsonLd.astro';
 import StatusBadge from './StatusBadge.astro';
 import type { CatalogItem, Locale } from '../lib/catalog';
-import { itemPath, t } from '../lib/catalog';
+import { itemPath, listPath, locPath, t } from '../lib/catalog';
 import { ui } from '../lib/i18n';
 
 interface Props {
@@ -14,23 +15,68 @@ interface Props {
 const { locale, item } = Astro.props;
 const copy = ui(locale);
 const d = item.data;
-const title = `${d.name} — ClaudeNovo`;
-const description = t(d.job, locale);
+const seoType = {
+  plugin: copy.seoPlugin,
+  skill: copy.seoSkill,
+  mcp: copy.seoMcp,
+}[d.type];
 const typeLabel = {
   plugin: copy.typePlugin,
   skill: copy.typeSkill,
   mcp: copy.typeMcp,
 }[d.type];
+const job = t(d.job, locale);
+const title = `${d.name} — ${seoType} | ClaudeNovo`;
+const description = `${seoType}. ${job} ${copy.install}.`;
+const path = itemPath(item, locale);
+const listHref = listPath(d.type, locale);
+const listTitle = {
+  plugin: copy.listPluginsTitle,
+  skill: copy.listSkillsTitle,
+  mcp: copy.listMcpTitle,
+}[d.type];
+const canonical = Astro.site ? new URL(path, Astro.site).href : path;
 ---
 
-<Base locale={locale} title={title} description={description} path={itemPath(item, locale)}>
+<Base locale={locale} title={title} description={description} path={path}>
+  <JsonLd
+    data={{
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'SoftwareApplication',
+          name: d.name,
+          applicationCategory: 'DeveloperApplication',
+          operatingSystem: 'Claude Code',
+          description: job,
+          url: canonical,
+          offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+        },
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'ClaudeNovo', item: Astro.site ? new URL(locPath('/', locale), Astro.site).href : '/' },
+            { '@type': 'ListItem', position: 2, name: listTitle, item: Astro.site ? new URL(listHref, Astro.site).href : listHref },
+            { '@type': 'ListItem', position: 3, name: d.name, item: canonical },
+          ],
+        },
+      ],
+    }}
+  />
   <article class="wrap detail">
+    <nav class="crumbs">
+      <a href={locPath('/', locale)}>{copy.crumbHome}</a>
+      <span>/</span>
+      <a href={listHref}>{listTitle}</a>
+      <span>/</span>
+      <span>{d.name}</span>
+    </nav>
     <div class="meta">
       <span class="badge type">{typeLabel}</span>
       <StatusBadge status={d.status} locale={locale} />
     </div>
     <h1>{d.name}</h1>
-    <p class="job">{t(d.job, locale)}</p>
+    <p class="job">{job}</p>
     <p>{t(d.description, locale)}</p>
 
     <CopyInstall command={d.install.claude_code.trim()} locale={locale} />

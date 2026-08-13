@@ -2,8 +2,9 @@
 import Base from '../layouts/Base.astro';
 import CatalogSearch from './CatalogSearch.astro';
 import ItemCard from './ItemCard.astro';
+import JsonLd from './JsonLd.astro';
 import type { CatalogItem, ItemType, Locale } from '../lib/catalog';
-import { listPath } from '../lib/catalog';
+import { itemPath, listPath, locPath } from '../lib/catalog';
 import { formatCount, ui } from '../lib/i18n';
 
 interface Props {
@@ -15,22 +16,45 @@ interface Props {
 const { locale, type, items } = Astro.props;
 const copy = ui(locale);
 const titleMap = {
-  plugin: copy.navPlugins,
-  skill: copy.navSkills,
-  mcp: copy.navMcp,
+  plugin: copy.listPluginsTitle,
+  skill: copy.listSkillsTitle,
+  mcp: copy.listMcpTitle,
 };
 const leadMap = {
   plugin: copy.pluginsLead,
   skill: copy.skillsLead,
   mcp: copy.mcpLead,
 };
-const title = `${titleMap[type]} — ClaudeNovo`;
+const heading = titleMap[type];
+const title = `${heading} | ClaudeNovo`;
+const path = listPath(type, locale);
+const home = locPath('/', locale);
 ---
 
-<Base locale={locale} title={title} description={leadMap[type]} path={listPath(type, locale)}>
+<Base locale={locale} title={title} description={leadMap[type]} path={path}>
+  <JsonLd
+    data={{
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: heading,
+      description: leadMap[type],
+      numberOfItems: items.length,
+      itemListElement: items.slice(0, 40).map((item, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: item.data.name,
+        url: Astro.site ? new URL(itemPath(item, locale), Astro.site).href : itemPath(item, locale),
+      })),
+    }}
+  />
   <div class="wrap">
+    <nav class="crumbs">
+      <a href={home}>{copy.crumbHome}</a>
+      <span>/</span>
+      <span>{heading}</span>
+    </nav>
     <header class="page-head">
-      <h1>{titleMap[type]}</h1>
+      <h1>{heading}</h1>
       <p>{leadMap[type]} {formatCount(locale, items.length)}.</p>
     </header>
     <CatalogSearch locale={locale} />

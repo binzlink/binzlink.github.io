@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import CatalogSearch from './CatalogSearch.astro';
 import ItemCard from './ItemCard.astro';
+import JsonLd from './JsonLd.astro';
 import { locPath, type CatalogItem, type Locale } from '../lib/catalog';
 import { formatCount, ui } from '../lib/i18n';
 
@@ -14,14 +15,25 @@ interface Props {
 const { locale, featured, items } = Astro.props;
 const copy = ui(locale);
 const path = locPath('/', locale);
+const site = Astro.site ? new URL(path, Astro.site).href : path;
 ---
 
-<Base locale={locale} title={`ClaudeNovo — ${copy.tagline}`} description={copy.tagline} path={path}>
+<Base locale={locale} title={`${copy.homeTitle} | ClaudeNovo`} description={copy.tagline} path={path}>
+  <JsonLd
+    data={{
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'ClaudeNovo',
+      url: site,
+      description: copy.tagline,
+      inLanguage: locale === 'zh' ? 'zh-CN' : locale,
+    }}
+  />
   <div class="wrap">
     <section class="hero">
-      <h1>{copy.tagline}</h1>
-      <p class="lead">{copy.trustNote}</p>
-      <p class="disclaimer">{copy.independent}</p>
+      <h1>{copy.homeTitle}</h1>
+      <p class="lead">{copy.tagline}</p>
+      <p class="disclaimer">{copy.trustNote} {copy.independent}</p>
       <p class="hero-actions">
         <a class="btn" href={locPath('/contact/', locale)}>{copy.navContact}</a>
       </p>

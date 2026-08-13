@@ -130,7 +130,7 @@ html[dir="rtl"] body {
   line-height: 1.15;
   margin: 0 0 14px;
   font-weight: 650;
-  max-width: 18ch;
+  max-width: 22ch;
 }
 .hero p.lead {
   margin: 0;
@@ -236,7 +236,19 @@ html[dir="rtl"] body {
 .badge.unverified { color: var(--unverified); border-color: #e0b44a44; }
 .badge.type { background: var(--accent-dim); color: var(--accent); border-color: transparent; }
 
-.page-head { padding: 40px 0 12px; }
+.crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: var(--muted);
+  padding-top: 28px;
+}
+.crumbs a { color: var(--muted); }
+.crumbs a:hover { color: var(--text); }
+.detail .crumbs { padding-top: 0; margin-bottom: 16px; }
+
+.page-head { padding: 12px 0 12px; }
 .page-head h1 { margin: 0 0 8px; letter-spacing: -0.03em; font-size: 1.8rem; }
 .page-head p { margin: 0; color: var(--muted); max-width: 46em; }
 
