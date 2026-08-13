@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import ShareBar from '../components/ShareBar.astro';
 import { ui } from '../lib/i18n';
 import {
   LOCALES,
@@ -21,6 +22,7 @@ const t = ui(locale);
 const meta = localeMeta(locale);
 const canonical = new URL(path, Astro.site).href;
 const enHref = new URL(switchLocaleHref(path, locale, 'en'), Astro.site).href;
+const ogImage = new URL('/apple-touch-icon.png', Astro.site).href;
 ---
 
 <!doctype html>
@@ -48,9 +50,12 @@ const enHref = new URL(switchLocaleHref(path, locale, 'en'), Astro.site).href;
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content={meta.html.replace('-', '_')} />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
   </head>
   <body>
     <header class="site-header">
@@ -95,6 +100,9 @@ const enHref = new URL(switchLocaleHref(path, locale, 'en'), Astro.site).href;
           ·
           <a href={locPath('/privacy-policy/', locale)}>{t.privacy}</a>
         </span>
+      </div>
+      <div class="wrap">
+        <ShareBar locale={locale} title={title} description={description} url={canonical} />
       </div>
     </footer>
   </body>

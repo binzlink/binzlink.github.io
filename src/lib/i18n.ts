@@ -48,6 +48,10 @@ const en = {
     'Company integrations for Claude Code. We invoice businesses, including China VAT fapiao.',
   privacy: 'Privacy',
   langLabel: 'Language',
+  share: 'Share',
+  copyLink: 'Copy link',
+  copiedLink: 'Copied',
+  shareNative: 'Share via device',
   noJsSearch:
     'Type to filter this list. JavaScript required for live search; every entry is also a crawlable page.',
   trustNote:
@@ -182,6 +186,10 @@ const zh: Ui = {
   contactLead: '面向企业的 Claude Code 对接与定制开发。对公合作，可开发票。',
   privacy: '隐私政策',
   langLabel: '语言',
+  share: '分享',
+  copyLink: '复制链接',
+  copiedLink: '已复制',
+  shareNative: '系统分享',
   noJsSearch: '输入即可过滤列表。即时搜索需要 JavaScript；每条都有可被收录的独立页面。',
   trustNote: '插件和 MCP 会执行代码。先读风险说明。我们不提供「一键信任」。',
   counts: '{n} 条',

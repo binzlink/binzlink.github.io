@@ -358,5 +358,36 @@ html[dir="rtl"] body {
   color: var(--muted);
   font-size: 0.82rem;
 }
+.site-footer .wrap + .wrap {
+  margin-top: 12px;
+}
+
+.share {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  font-size: 0.82rem;
+}
+.share-label {
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+}
+.share a,
+.share-btn {
+  color: var(--muted);
+  background: transparent;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+.share a:hover,
+.share-btn:hover {
+  color: var(--text);
+  text-decoration: none;
+}
 
 .hidden { display: none !important; }

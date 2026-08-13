@@ -1,0 +1,88 @@
+---
+import type { Locale } from '../lib/locales';
+import { ui } from '../lib/i18n';
+
+interface Props {
+  locale: Locale;
+  title: string;
+  description: string;
+  url: string;
+}
+
+const { locale, title, description, url } = Astro.props;
+const copy = ui(locale);
+const encodedUrl = encodeURIComponent(url);
+const encodedTitle = encodeURIComponent(title);
+---
+
+<nav class="share" aria-label={copy.share}>
+  <span class="share-label">{copy.share}</span>
+  <a
+    href={`https://x.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`}
+    rel="noopener noreferrer"
+    target="_blank"
+  >X</a>
+  <a
+    href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`}
+    rel="noopener noreferrer"
+    target="_blank"
+  >LinkedIn</a>
+  <a
+    href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`}
+    rel="noopener noreferrer"
+    target="_blank"
+  >Facebook</a>
+  <a
+    href={`https://service.weibo.com/share/share.php?url=${encodedUrl}&title=${encodedTitle}`}
+    rel="noopener noreferrer"
+    target="_blank"
+  >{locale === 'zh' ? '微博' : 'Weibo'}</a>
+  <a
+    href={`https://t.me/share/url?url=${encodedUrl}&text=${encodedTitle}`}
+    rel="noopener noreferrer"
+    target="_blank"
+  >Telegram</a>
+  <button type="button" class="share-btn" data-share-copy data-copied={copy.copiedLink}>{copy.copyLink}</button>
+  <button
+    type="button"
+    class="share-btn hidden"
+    data-share-native
+    data-title={title}
+    data-text={description}
+    data-url={url}
+  >{copy.shareNative}</button>
+</nav>
+
+<script>
+  const copyBtn = document.querySelector<HTMLButtonElement>('[data-share-copy]');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        const prev = copyBtn.textContent;
+        copyBtn.textContent = copyBtn.dataset.copied ?? 'Copied';
+        setTimeout(() => {
+          copyBtn.textContent = prev;
+        }, 1200);
+      } catch {
+        /* ignore */
+      }
+    });
+  }
+
+  const nativeBtn = document.querySelector<HTMLButtonElement>('[data-share-native]');
+  if (nativeBtn && typeof navigator.share === 'function') {
+    nativeBtn.classList.remove('hidden');
+    nativeBtn.addEventListener('click', async () => {
+      try {
+        await navigator.share({
+          title: nativeBtn.dataset.title,
+          text: nativeBtn.dataset.text,
+          url: nativeBtn.dataset.url ?? location.href,
+        });
+      } catch {
+        /* user cancelled */
+      }
+    });
+  }
+</script>
