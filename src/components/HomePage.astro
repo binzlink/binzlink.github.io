@@ -2,8 +2,8 @@
 import Base from '../layouts/Base.astro';
 import CatalogSearch from './CatalogSearch.astro';
 import ItemCard from './ItemCard.astro';
-import type { CatalogItem, Locale } from '../lib/catalog';
-import { ui } from '../lib/i18n';
+import { locPath, type CatalogItem, type Locale } from '../lib/catalog';
+import { formatCount, ui } from '../lib/i18n';
 
 interface Props {
   locale: Locale;
@@ -13,7 +13,7 @@ interface Props {
 
 const { locale, featured, items } = Astro.props;
 const copy = ui(locale);
-const path = locale === 'zh' ? '/zh/' : '/';
+const path = locPath('/', locale);
 ---
 
 <Base locale={locale} title={`ClaudeNovo — ${copy.tagline}`} description={copy.tagline} path={path}>
@@ -31,7 +31,7 @@ const path = locale === 'zh' ? '/zh/' : '/';
       {featured.map((item) => <ItemCard item={item} locale={locale} />)}
     </div>
 
-    <p class="section-title">{copy.all} · {copy.counts(items.length)}</p>
+    <p class="section-title">{copy.all} · {formatCount(locale, items.length)}</p>
     <p id="search-empty" class="hint hidden">{copy.searchEmpty}</p>
     <div class="grid">
       {items.map((item) => <ItemCard item={item} locale={locale} />)}

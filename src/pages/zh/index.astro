@@ -1,9 +1,0 @@
----
-import HomePage from '../../components/HomePage.astro';
-import { allItems, featuredItems } from '../../lib/catalog';
-
-const items = await allItems();
-const featured = await featuredItems();
----
-
-<HomePage locale="zh" featured={featured} items={items} />

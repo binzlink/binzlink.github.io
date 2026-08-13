@@ -48,6 +48,13 @@ a:hover { text-decoration: underline; }
   flex-wrap: wrap;
 }
 
+.header-end {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
 .brand {
   color: var(--text);
   font-weight: 650;
@@ -67,7 +74,54 @@ nav a { color: var(--muted); }
 nav a[aria-current="page"],
 nav a:hover { color: var(--text); text-decoration: none; }
 
-.lang { font-size: 0.85rem; }
+.lang-switch {
+  position: relative;
+}
+.lang-switch summary {
+  list-style: none;
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 0.85rem;
+  user-select: none;
+}
+.lang-switch summary::-webkit-details-marker {
+  display: none;
+}
+.lang-switch summary::after {
+  content: " ▾";
+  font-size: 0.7em;
+}
+.lang-switch ul {
+  position: absolute;
+  inset-inline-end: 0;
+  top: calc(100% + 6px);
+  z-index: 20;
+  margin: 0;
+  padding: 6px 0;
+  list-style: none;
+  background: var(--bg-raise);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  min-width: 10rem;
+  max-height: min(70vh, 420px);
+  overflow-y: auto;
+}
+.lang-switch a {
+  display: block;
+  padding: 6px 12px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.lang-switch a[aria-current="true"],
+.lang-switch a:hover {
+  color: var(--text);
+  background: var(--accent-dim);
+  text-decoration: none;
+}
+
+html[dir="rtl"] body {
+  font-family: "IBM Plex Sans", "Noto Naskh Arabic", "Noto Sans Arabic", ui-sans-serif, system-ui, sans-serif;
+}
 
 .hero { padding: 56px 0 28px; }
 .hero h1 {
@@ -220,6 +274,47 @@ nav a:hover { color: var(--text); text-decoration: none; }
 .prose h2 { margin-top: 1.8em; font-size: 1.15rem; }
 .prose p, .prose li { color: var(--muted); }
 .prose strong { color: var(--text); }
+
+.capability-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+.capability-list li {
+  background: var(--bg-raise);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+.capability-list strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.email-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 2em;
+  padding: 18px 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg-raise);
+}
+.email-cta span {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+.email-cta a {
+  font-size: 1.15rem;
+  font-weight: 650;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+.email-cta a:hover { color: var(--accent); }
 
 .site-footer {
   border-top: 1px solid var(--line);

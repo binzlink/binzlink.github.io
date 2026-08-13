@@ -1,0 +1,44 @@
+---
+import Base from '../layouts/Base.astro';
+import { locPath, type Locale } from '../lib/catalog';
+import { ui } from '../lib/i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const copy = ui(locale);
+const c = copy.contact;
+const path = locPath('/contact/', locale);
+const email = 'business@claudenovo.com';
+---
+
+<Base locale={locale} title={`${copy.contactTitle} — ClaudeNovo`} description={copy.contactLead} path={path}>
+  <article class="wrap prose contact">
+    <h1>{copy.contactTitle}</h1>
+    <p>{c.p1}</p>
+    <p>{c.p2}</p>
+
+    <h2>{c.capTitle}</h2>
+    <ul class="capability-list">
+      {c.caps.map((cap) => (
+        <li>
+          <strong>{cap.title}</strong>
+          {cap.body}
+        </li>
+      ))}
+    </ul>
+
+    <h2>{c.takeTitle}</h2>
+    <p>{c.takeBody}</p>
+
+    <h2>{c.startTitle}</h2>
+    <p>{c.startBody}</p>
+
+    <p class="email-cta">
+      <span>{c.emailLabel}</span>
+      <a href={`mailto:${email}`}>{email}</a>
+    </p>
+  </article>
+</Base>

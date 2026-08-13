@@ -18,7 +18,7 @@ const typeLabel = {
 }[item.data.type];
 ---
 
-<a class="card" data-card href={itemPath(item, locale)} data-name={item.data.name.toLowerCase()} data-job-en={item.data.job.en.toLowerCase()} data-job-zh={item.data.job.zh.toLowerCase()} data-type={typePath[item.data.type]}>
+<a class="card" data-card href={itemPath(item, locale)} data-name={item.data.name.toLowerCase()} data-job-en={item.data.job.en.toLowerCase()} data-job-zh={(item.data.job.zh ?? '').toLowerCase()} data-type={typePath[item.data.type]}>
   <div class="meta">
     <span class="badge type">{typeLabel}</span>
     <StatusBadge status={item.data.status} locale={locale} />

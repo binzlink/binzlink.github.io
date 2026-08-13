@@ -1,7 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import type { Locale } from '../lib/catalog';
-import { locPath } from '../lib/catalog';
+import { locPath, type Locale } from '../lib/catalog';
 import { ui } from '../lib/i18n';
 
 interface Props {
@@ -10,42 +9,33 @@ interface Props {
 
 const { locale } = Astro.props;
 const copy = ui(locale);
+const p = copy.privacyPage;
 const path = locPath('/privacy-policy/', locale);
 const updated = '2026-08-13';
+const email = 'business@claudenovo.com';
 ---
 
 <Base locale={locale} title={`${copy.privacy} — ClaudeNovo`} description={copy.privacy} path={path}>
   <article class="wrap prose">
-    {locale === 'zh' ? (
-      <>
-        <h1>隐私政策</h1>
-        <p>最近更新：{updated}</p>
-        <p>ClaudeNovo（https://www.claudenovo.com/）是独立的静态网站，提供 Claude Code 插件、Skills 与 MCP 的精选目录。与 Anthropic 无隶属关系。</p>
-        <h2>我们收集什么</h2>
-        <p>站点本身不设账号，不接受用户提交，不在浏览器里保存项目文件。页面是静态生成的。</p>
-        <p>托管方（GitHub Pages 及你访问时经过的 CDN）会留下常规服务器日志，例如 IP、User-Agent、访问时间。我们不把这些日志用于广告画像。</p>
-        <h2>Cookie 与分析</h2>
-        <p>本站不设置广告 Cookie，也不接入广告网络。若将来加入匿名流量统计，会在本页更新。</p>
-        <h2>第三方链接</h2>
-        <p>目录条目链向 GitHub 和其他主页。那些站点有自己的隐私政策。安装插件或 MCP 会在你的机器上执行代码，并可能向第三方服务发送 token。这发生在 Claude Code 里，不经过本站。</p>
-        <h2>联系</h2>
-        <p>通过本仓库的 GitHub Issues 联系。</p>
-      </>
-    ) : (
-      <>
-        <h1>Privacy Policy</h1>
-        <p>Last updated: {updated}</p>
-        <p>ClaudeNovo (https://www.claudenovo.com/) is an independent static site: a curated directory of Claude Code plugins, skills, and MCP servers. It is not affiliated with Anthropic.</p>
-        <h2>What we collect</h2>
-        <p>The site has no accounts, no user submissions, and no project files in the browser. Pages are generated at build time.</p>
-        <p>The host (GitHub Pages and any CDN in front) may keep ordinary server logs such as IP, user agent, and time. We do not use those logs for advertising profiles.</p>
-        <h2>Cookies and analytics</h2>
-        <p>We do not set advertising cookies and do not use ad networks. If we add anonymous traffic stats later, this page will change.</p>
-        <h2>Third-party links</h2>
-        <p>Catalog entries link to GitHub and other homepages. Those sites have their own policies. Installing a plugin or MCP runs code on your machine and may send tokens to third parties. That happens in Claude Code, not through this site.</p>
-        <h2>Contact</h2>
-        <p>Use GitHub Issues on this repository.</p>
-      </>
-    )}
+    <h1>{copy.privacy}</h1>
+    <p>{p.updated}: {updated}</p>
+    <p>{p.intro}</p>
+    <h2>{p.collectH}</h2>
+    <p>{p.collectP1}</p>
+    <p>{p.collectP2}</p>
+    <h2>{p.cookieH}</h2>
+    <p>{p.cookieP}</p>
+    <h2>{p.thirdH}</h2>
+    <p>{p.thirdP}</p>
+    <h2>{p.contactH}</h2>
+    <p>
+      {p.contactLead}
+      {' '}
+      <a href={`mailto:${email}`}>{email}</a>.
+      {' '}
+      {p.see}
+      {' '}
+      <a href={locPath('/contact/', locale)}>{copy.navContact}</a>.
+    </p>
   </article>
 </Base>

@@ -4,7 +4,7 @@ import CatalogSearch from './CatalogSearch.astro';
 import ItemCard from './ItemCard.astro';
 import type { CatalogItem, ItemType, Locale } from '../lib/catalog';
 import { listPath } from '../lib/catalog';
-import { ui } from '../lib/i18n';
+import { formatCount, ui } from '../lib/i18n';
 
 interface Props {
   locale: Locale;
@@ -31,7 +31,7 @@ const title = `${titleMap[type]} — ClaudeNovo`;
   <div class="wrap">
     <header class="page-head">
       <h1>{titleMap[type]}</h1>
-      <p>{leadMap[type]} {copy.counts(items.length)}.</p>
+      <p>{leadMap[type]} {formatCount(locale, items.length)}.</p>
     </header>
     <CatalogSearch locale={locale} />
     <p id="search-empty" class="hint hidden">{copy.searchEmpty}</p>

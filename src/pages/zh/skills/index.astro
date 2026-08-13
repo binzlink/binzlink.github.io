@@ -1,8 +1,0 @@
----
-import ListPage from '../../../components/ListPage.astro';
-import { itemsByType } from '../../../lib/catalog';
-
-const items = await itemsByType('skill');
----
-
-<ListPage locale="zh" type="skill" items={items} />

@@ -1,0 +1,13 @@
+---
+import DetailPage from '../../../components/DetailPage.astro';
+import { itemsByType } from '../../../lib/catalog';
+import { localeItemPaths } from '../../../lib/locales';
+
+export async function getStaticPaths() {
+  return localeItemPaths(await itemsByType('mcp'));
+}
+
+const { item, locale } = Astro.props;
+---
+
+<DetailPage locale={locale} item={item} />

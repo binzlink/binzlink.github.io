@@ -1,0 +1,12 @@
+---
+import PrivacyPage from '../../components/PrivacyPage.astro';
+import { localeStaticPaths } from '../../lib/locales';
+
+export function getStaticPaths() {
+  return localeStaticPaths();
+}
+
+const { locale } = Astro.props;
+---
+
+<PrivacyPage locale={locale} />

@@ -1,0 +1,15 @@
+---
+import HomePage from '../../components/HomePage.astro';
+import { allItems, featuredItems } from '../../lib/catalog';
+import { localeStaticPaths } from '../../lib/locales';
+
+export function getStaticPaths() {
+  return localeStaticPaths();
+}
+
+const { locale } = Astro.props;
+const items = await allItems();
+const featured = await featuredItems();
+---
+
+<HomePage locale={locale} featured={featured} items={items} />

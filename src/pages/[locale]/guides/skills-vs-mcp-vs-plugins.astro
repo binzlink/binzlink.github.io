@@ -1,0 +1,12 @@
+---
+import GuidePage from '../../../components/GuidePage.astro';
+import { localeStaticPaths } from '../../../lib/locales';
+
+export function getStaticPaths() {
+  return localeStaticPaths();
+}
+
+const { locale } = Astro.props;
+---
+
+<GuidePage locale={locale} />

@@ -1,0 +1,14 @@
+---
+import ListPage from '../../../components/ListPage.astro';
+import { itemsByType } from '../../../lib/catalog';
+import { localeStaticPaths } from '../../../lib/locales';
+
+export function getStaticPaths() {
+  return localeStaticPaths();
+}
+
+const { locale } = Astro.props;
+const items = await itemsByType('skill');
+---
+
+<ListPage locale={locale} type="skill" items={items} />

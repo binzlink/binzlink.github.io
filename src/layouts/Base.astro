@@ -1,7 +1,13 @@
 ---
 import '../styles/global.css';
 import { ui } from '../lib/i18n';
-import { otherLocaleHref, type Locale } from '../lib/catalog';
+import {
+  LOCALES,
+  localeMeta,
+  locPath,
+  switchLocaleHref,
+  type Locale,
+} from '../lib/locales';
 
 interface Props {
   locale: Locale;
@@ -12,15 +18,13 @@ interface Props {
 
 const { locale, title, description, path } = Astro.props;
 const t = ui(locale);
+const meta = localeMeta(locale);
 const canonical = new URL(path, Astro.site).href;
-const enPath = locale === 'en' ? path : path.replace(/^\/zh/, '') || '/';
-const zhPath = locale === 'zh' ? path : path === '/' ? '/zh/' : `/zh${path}`;
-const otherHref = otherLocaleHref(path, locale);
-const htmlLang = locale === 'zh' ? 'zh-CN' : 'en';
+const enHref = new URL(switchLocaleHref(path, locale, 'en'), Astro.site).href;
 ---
 
 <!doctype html>
-<html lang={htmlLang}>
+<html lang={meta.html} dir={meta.dir}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -28,9 +32,14 @@ const htmlLang = locale === 'zh' ? 'zh-CN' : 'en';
     <meta name="description" content={description} />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonical} />
-    <link rel="alternate" hreflang="en" href={new URL(enPath, Astro.site).href} />
-    <link rel="alternate" hreflang="zh-CN" href={new URL(zhPath, Astro.site).href} />
-    <link rel="alternate" hreflang="x-default" href={new URL(enPath, Astro.site).href} />
+    {LOCALES.map((l) => (
+      <link
+        rel="alternate"
+        hreflang={l.hreflang}
+        href={new URL(switchLocaleHref(path, locale, l.id), Astro.site).href}
+      />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={enHref} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#101114" />
@@ -46,14 +55,33 @@ const htmlLang = locale === 'zh' ? 'zh-CN' : 'en';
   <body>
     <header class="site-header">
       <div class="wrap">
-        <a class="brand" href={locale === 'zh' ? '/zh/' : '/'}>{t.brand}</a>
-        <nav>
-          <a href={locale === 'zh' ? '/zh/plugins/' : '/plugins/'}>{t.navPlugins}</a>
-          <a href={locale === 'zh' ? '/zh/skills/' : '/skills/'}>{t.navSkills}</a>
-          <a href={locale === 'zh' ? '/zh/mcp/' : '/mcp/'}>{t.navMcp}</a>
-          <a href={locale === 'zh' ? '/zh/guides/skills-vs-mcp-vs-plugins/' : '/guides/skills-vs-mcp-vs-plugins/'}>{t.navGuide}</a>
-          <a class="lang" href={otherHref} hreflang={locale === 'en' ? 'zh-CN' : 'en'}>{t.switchLang}</a>
-        </nav>
+        <a class="brand" href={locPath('/', locale)}>{t.brand}</a>
+        <div class="header-end">
+          <nav>
+            <a href={locPath('/plugins/', locale)}>{t.navPlugins}</a>
+            <a href={locPath('/skills/', locale)}>{t.navSkills}</a>
+            <a href={locPath('/mcp/', locale)}>{t.navMcp}</a>
+            <a href={locPath('/guides/skills-vs-mcp-vs-plugins/', locale)}>{t.navGuide}</a>
+            <a href={locPath('/contact/', locale)}>{t.navContact}</a>
+          </nav>
+          <details class="lang-switch">
+            <summary>{meta.native}</summary>
+            <ul>
+              {LOCALES.map((l) => (
+                <li>
+                  <a
+                    href={switchLocaleHref(path, locale, l.id)}
+                    hreflang={l.hreflang}
+                    lang={l.html}
+                    aria-current={l.id === locale ? 'true' : undefined}
+                  >
+                    {l.native}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </details>
+        </div>
       </div>
     </header>
     <main>
@@ -63,7 +91,9 @@ const htmlLang = locale === 'zh' ? 'zh-CN' : 'en';
       <div class="wrap">
         <span>{t.independent}</span>
         <span>
-          <a href={locale === 'zh' ? '/zh/privacy-policy/' : '/privacy-policy/'}>{t.privacy}</a>
+          <a href={locPath('/contact/', locale)}>{t.navContact}</a>
+          ·
+          <a href={locPath('/privacy-policy/', locale)}>{t.privacy}</a>
         </span>
       </div>
     </footer>
