@@ -22,6 +22,9 @@ const path = locPath('/', locale);
       <h1>{copy.tagline}</h1>
       <p class="lead">{copy.trustNote}</p>
       <p class="disclaimer">{copy.independent}</p>
+      <p class="hero-actions">
+        <a class="btn" href={locPath('/contact/', locale)}>{copy.navContact}</a>
+      </p>
     </section>
 
     <CatalogSearch locale={locale} />

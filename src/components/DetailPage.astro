@@ -38,11 +38,7 @@ const typeLabel = {
     <div class="facts">
       <h2>{copy.latestCheck}</h2>
       <ul>
-        {d.verified_at ? (
-          <li>{copy.verifiedOn}: {d.verified_at}</li>
-        ) : (
-          <li>{copy.neverVerified}</li>
-        )}
+        {d.verified_at && <li>{copy.verifiedOn}: {d.verified_at}</li>}
         {d.source_checked_at && <li>{copy.sourceChecked}: {d.source_checked_at}</li>}
         {d.source.marketplace && (
           <li>{copy.marketplace}: {d.source.marketplace}</li>

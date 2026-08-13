@@ -8,11 +8,11 @@ interface Props {
 }
 
 const { status, locale } = Astro.props;
+if (status === 'unverified') return;
 const copy = ui(locale);
 const label = {
   works: copy.statusWorks,
   broken: copy.statusBroken,
-  unverified: copy.statusUnverified,
 }[status];
 ---
 
