@@ -310,6 +310,24 @@ html[dir="rtl"] body {
   margin-bottom: 4px;
 }
 
+.b2b-callout {
+  margin: 1.4em 0 0;
+  padding: 16px 16px 14px;
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  background: var(--accent-dim);
+}
+.b2b-callout strong {
+  display: block;
+  color: var(--text);
+  margin-bottom: 6px;
+  font-size: 1.02rem;
+}
+.b2b-callout p {
+  margin: 0;
+  color: var(--muted);
+}
+
 .email-cta {
   display: flex;
   flex-direction: column;

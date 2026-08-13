@@ -11,7 +11,7 @@ const { locale } = Astro.props;
 const copy = ui(locale);
 const c = copy.contact;
 const path = locPath('/contact/', locale);
-const email = 'business@claudenovo.com';
+const email = 'zhoubin@claudenovo.com';
 ---
 
 <Base locale={locale} title={`${copy.contactTitle} — ClaudeNovo`} description={copy.contactLead} path={path}>
@@ -19,6 +19,11 @@ const email = 'business@claudenovo.com';
     <h1>{copy.contactTitle}</h1>
     <p>{c.p1}</p>
     <p>{c.p2}</p>
+
+    <aside class="b2b-callout">
+      <strong>{c.b2bTitle}</strong>
+      <p>{c.b2bBody}</p>
+    </aside>
 
     <h2>{c.capTitle}</h2>
     <ul class="capability-list">
