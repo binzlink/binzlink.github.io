@@ -70,7 +70,11 @@
   letter-spacing: -0.03em;
   font-size: 1.12rem;
 }
-.mc-brand:hover { text-decoration: none; }
+.memcard-site a.mc-brand,
+.memcard-site a.mc-brand:hover {
+  color: var(--mc-navy);
+  text-decoration: none;
+}
 .mc-brand img {
   width: 36px;
   height: 36px;
@@ -124,7 +128,8 @@
   text-decoration: none;
 }
 
-.mc-btn {
+a.mc-btn,
+.memcard-site a.mc-btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -139,7 +144,7 @@
   border: 0;
   box-shadow: 0 8px 0 var(--mc-coral-deep);
 }
-.mc-btn:hover {
+.memcard-site a.mc-btn:hover {
   text-decoration: none;
   filter: brightness(1.04);
   color: #fff;
@@ -331,12 +336,15 @@
   color: #fff;
 }
 .mc-close p { color: #fff8f0; margin: 0 0 20px; }
-.mc-close .mc-btn {
+.memcard-site .mc-close a.mc-btn {
   background: #fff;
   color: var(--mc-navy);
   box-shadow: 0 8px 0 #e8d4b8;
 }
-.mc-close .mc-btn:hover { color: var(--mc-navy); }
+.memcard-site .mc-close a.mc-btn:hover {
+  color: var(--mc-navy);
+  filter: none;
+}
 .mc-legal {
   margin-top: 16px;
   font-size: 0.78rem;
