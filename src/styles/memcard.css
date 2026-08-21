@@ -243,19 +243,14 @@
 
 .mc-shots {
   display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(168px, 200px);
-  gap: 14px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding: 6px 2px 18px;
-  margin-inline: -4px;
-}
-.mc-shot {
-  scroll-snap-align: start;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  padding: 6px 0 18px;
 }
 .mc-shot img {
+  display: block;
   width: 100%;
+  height: auto;
   aspect-ratio: 9 / 16;
   object-fit: cover;
   border-radius: 22px;
@@ -413,4 +408,17 @@
   .mc-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .mc-steps { grid-template-columns: 1fr; }
   .mc-hero { padding-top: 28px; }
+  .mc-shots {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    margin-inline: -20px;
+    padding-inline: 20px;
+    padding-bottom: 12px;
+  }
+  .mc-shot {
+    flex: 0 0 min(78vw, 300px);
+    scroll-snap-align: start;
+  }
 }
