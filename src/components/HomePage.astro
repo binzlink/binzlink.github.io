@@ -15,22 +15,37 @@ interface Props {
 const { locale, featured, items } = Astro.props;
 const copy = ui(locale);
 const path = locPath('/', locale);
-const site = Astro.site ? new URL(path, Astro.site).href : path;
+const origin = Astro.site ?? new URL('https://www.claudenovo.com');
+const site = new URL(path, origin).href;
+const orgId = `${new URL('/', origin).href}#org`;
 ---
 
-<Base locale={locale} title={`${copy.homeTitle} | ClaudeNovo`} description={copy.tagline} path={path}>
+<Base locale={locale} title={`ClaudeNovo — ${copy.homeTitle}`} description={copy.tagline} path={path}>
   <JsonLd
     data={{
       '@context': 'https://schema.org',
-      '@type': 'WebSite',
-      name: 'ClaudeNovo',
-      url: site,
-      description: copy.tagline,
-      inLanguage: locale === 'zh' ? 'zh-CN' : locale,
+      '@graph': [
+        {
+          '@type': 'WebSite',
+          name: 'ClaudeNovo',
+          url: site,
+          description: copy.tagline,
+          inLanguage: locale === 'zh' ? 'zh-CN' : locale,
+          publisher: { '@id': orgId },
+        },
+        {
+          '@type': 'Organization',
+          '@id': orgId,
+          name: 'ClaudeNovo',
+          legalName: 'ClaudeNovo',
+          url: new URL('/', origin).href,
+        },
+      ],
     }}
   />
   <div class="wrap">
     <section class="hero">
+      <p class="brand-kicker">ClaudeNovo</p>
       <h1>{copy.homeTitle}</h1>
       <p class="lead">{copy.tagline}</p>
       <p class="disclaimer">{copy.trustNote} {copy.independent}</p>

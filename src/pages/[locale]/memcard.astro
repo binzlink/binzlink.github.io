@@ -1,0 +1,12 @@
+---
+import MemcardPage from '../../components/MemcardPage.astro';
+import { localeStaticPaths } from '../../lib/locales';
+
+export function getStaticPaths() {
+  return localeStaticPaths();
+}
+
+const { locale } = Astro.props;
+---
+
+<MemcardPage locale={locale} />
