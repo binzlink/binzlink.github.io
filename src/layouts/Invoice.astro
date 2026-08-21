@@ -1,0 +1,141 @@
+---
+import '../styles/invoice.css';
+import { ICON_SRC, FEATURE_SRC, PLAY_URL, invoice } from '../lib/invoice';
+import {
+  LOCALES,
+  localeMeta,
+  locPath,
+  switchLocaleHref,
+  type Locale,
+} from '../lib/locales';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = invoice(locale);
+const meta = localeMeta(locale);
+const path = locPath('/invoice-maker/', locale);
+const canonical = new URL(path, Astro.site).href;
+const enHref = new URL(switchLocaleHref(path, locale, 'en'), Astro.site).href;
+const ogImage = new URL(FEATURE_SRC, Astro.site).href;
+---
+
+<!doctype html>
+<html lang={t.htmlLang} dir={meta.dir}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{t.title}</title>
+    <meta name="description" content={t.description} />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href={canonical} />
+    {LOCALES.map((l) => (
+      <link
+        rel="alternate"
+        hreflang={l.hreflang}
+        href={new URL(switchLocaleHref(path, locale, l.id), Astro.site).href}
+      />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={enHref} />
+    <link rel="icon" type="image/png" href={ICON_SRC} />
+    <link rel="apple-touch-icon" href={ICON_SRC} />
+    <meta name="theme-color" content="#14213d" />
+    <meta name="color-scheme" content="light" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Invoice Maker" />
+    <meta property="og:title" content={t.title} />
+    <meta property="og:description" content={t.description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1024" />
+    <meta property="og:image:height" content="500" />
+    <meta property="og:locale" content={meta.html.replace('-', '_')} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={t.title} />
+    <meta name="twitter:description" content={t.description} />
+    <meta name="twitter:image" content={ogImage} />
+    <slot name="head" />
+  </head>
+  <body class="invoice-site">
+    <a class="mc-skip" href="#main">{t.skip}</a>
+    <header class="mc-header">
+      <div class="mc-wrap">
+        <a class="mc-brand" href={path}>
+          <img src={ICON_SRC} width="36" height="36" alt="" />
+          {t.name}
+        </a>
+        <div class="mc-header-end">
+          <details class="mc-lang">
+            <summary>{meta.native}</summary>
+            <ul>
+              {LOCALES.map((l) => (
+                <li>
+                  <a
+                    href={switchLocaleHref(path, locale, l.id)}
+                    hreflang={l.hreflang}
+                    lang={l.html}
+                    aria-current={l.id === locale ? 'true' : undefined}
+                  >
+                    {l.native}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </details>
+          <a class="mc-btn mc-btn-sm" href={PLAY_URL} rel="noopener noreferrer">{t.cta}</a>
+        </div>
+      </div>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    <footer class="mc-footer">
+      <div class="mc-wrap">
+        <span>{t.developer}</span>
+        <span>
+          <a href="#privacy">{t.privacy}</a>
+          ·
+          <a href={locPath('/', locale)}>{t.studio}</a>
+        </span>
+      </div>
+      <div class="mc-wrap">
+        <slot name="footer" />
+      </div>
+    </footer>
+    <script>
+      const copyBtn = document.querySelector<HTMLButtonElement>('[data-share-copy]');
+      if (copyBtn) {
+        copyBtn.addEventListener('click', async () => {
+          try {
+            await navigator.clipboard.writeText(location.href);
+            const prev = copyBtn.textContent;
+            copyBtn.textContent = copyBtn.dataset.copied ?? 'Copied';
+            setTimeout(() => {
+              copyBtn.textContent = prev;
+            }, 1200);
+          } catch {
+            /* ignore */
+          }
+        });
+      }
+
+      const nativeBtn = document.querySelector<HTMLButtonElement>('[data-share-native]');
+      if (nativeBtn && typeof navigator.share === 'function') {
+        nativeBtn.classList.remove('hidden');
+        nativeBtn.addEventListener('click', async () => {
+          try {
+            await navigator.share({
+              title: nativeBtn.dataset.title,
+              text: nativeBtn.dataset.text,
+              url: nativeBtn.dataset.url ?? location.href,
+            });
+          } catch {
+            /* cancelled */
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

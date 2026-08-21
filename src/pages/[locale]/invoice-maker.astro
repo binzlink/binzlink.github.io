@@ -1,0 +1,12 @@
+---
+import InvoicePage from '../../components/InvoicePage.astro';
+import { localeStaticPaths } from '../../lib/locales';
+
+export function getStaticPaths() {
+  return localeStaticPaths();
+}
+
+const { locale } = Astro.props;
+---
+
+<InvoicePage locale={locale} />

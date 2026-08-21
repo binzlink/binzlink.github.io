@@ -1,0 +1,224 @@
+---
+import Invoice from '../layouts/Invoice.astro';
+import JsonLd from './JsonLd.astro';
+import { locPath, type Locale } from '../lib/locales';
+import {
+  DEVELOPER_EMAIL,
+  FEATURE_SRC,
+  ICON_SRC,
+  PACKAGE_ID,
+  PLAY_URL,
+  SHOT_FILES,
+  invoice,
+} from '../lib/invoice';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = invoice(locale);
+const path = locPath('/invoice-maker/', locale);
+const origin = Astro.site ?? new URL('https://www.claudenovo.com');
+const pageUrl = new URL(path, origin).href;
+const encodedUrl = encodeURIComponent(pageUrl);
+const encodedTitle = encodeURIComponent(t.title);
+const shots = t.shots.map((shot, i) => ({ ...shot, src: SHOT_FILES[i] }));
+---
+
+<Invoice locale={locale}>
+  <JsonLd
+    slot="head"
+    data={{
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'MobileApplication',
+          name: 'Invoice Maker',
+          url: pageUrl,
+          installUrl: PLAY_URL,
+          applicationCategory: 'BusinessApplication',
+          operatingSystem: 'ANDROID',
+          offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+          description: t.description,
+          inLanguage: t.htmlLang,
+          isAccessibleForFree: true,
+          image: new URL(ICON_SRC, origin).href,
+          screenshot: SHOT_FILES.map((src) => new URL(src, origin).href),
+          publisher: {
+            '@type': 'Organization',
+            name: t.developer,
+            email: DEVELOPER_EMAIL,
+            url: new URL('/', origin).href,
+          },
+          identifier: PACKAGE_ID,
+        },
+        {
+          '@type': 'FAQPage',
+          mainEntity: t.faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.q,
+            acceptedAnswer: { '@type': 'Answer', text: faq.a },
+          })),
+        },
+      ],
+    }}
+  />
+
+  <div class="mc-wrap">
+    <section class="mc-hero">
+      <p class="mc-kicker">{t.kicker}</p>
+      <h1>{t.headline}</h1>
+      <p class="mc-lead">{t.lead}</p>
+      <div class="mc-hero-actions">
+        <a class="mc-btn" href={PLAY_URL} rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+            <path d="M2 2.2v11.6L12.4 8 2 2.2z" fill="currentColor" />
+          </svg>
+          {t.cta}
+        </a>
+        <span class="mc-cta-hint">{t.ctaHint}</span>
+      </div>
+      <img
+        class="mc-feature"
+        src={FEATURE_SRC}
+        alt="Invoice Maker — Create and share invoices. No account."
+        width="1024"
+        height="500"
+      />
+    </section>
+
+    <div class="mc-stats">
+      {t.stats.map((stat) => (
+        <div class="mc-stat">
+          <b>{stat.value}</b>
+          <span>{stat.label}</span>
+        </div>
+      ))}
+    </div>
+
+    <section class="mc-section" id="shots">
+      <span class="mc-label">{t.shotsLabel}</span>
+      <h2>{t.shotsTitle}</h2>
+      <div class="mc-shots">
+        {shots.map((shot) => (
+          <figure class="mc-shot">
+            <img src={shot.src} alt={`${shot.title} — ${shot.caption}`} width="1080" height="1920" />
+            <figcaption>
+              <strong>{shot.title}</strong>
+              {shot.caption}
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </section>
+
+    <section class="mc-section" id="how">
+      <span class="mc-label">{t.howLabel}</span>
+      <h2>{t.howTitle}</h2>
+      <div class="mc-steps">
+        {t.steps.map((step) => (
+          <div class="mc-step">
+            <b>{step.n}</b>
+            <h3>{step.title}</h3>
+            <p>{step.body}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="mc-section" id="extras">
+      <span class="mc-label">{t.extrasLabel}</span>
+      <h2>{t.extrasTitle}</h2>
+      <div class="mc-extras">
+        {t.extras.map((extra) => (
+          <article class="mc-extra">
+            <h3>{extra.name}</h3>
+            <p>{extra.body}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="mc-section" id="pricing">
+      <span class="mc-label">{t.plansLabel}</span>
+      <h2>{t.plansTitle}</h2>
+      <p class="mc-lead">{t.plansLead}</p>
+      <div class="mc-plans">
+        {t.plans.map((plan) => (
+          <article class="mc-plan">
+            <h3>{plan.name}</h3>
+            <b>{plan.price}</b>
+            <p>{plan.body}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="mc-close" aria-label={t.cta}>
+      <h2>{t.closeHeadline}</h2>
+      <p>{t.closeLead}</p>
+      <div class="mc-hero-actions">
+        <a class="mc-btn" href={PLAY_URL} rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+            <path d="M2 2.2v11.6L12.4 8 2 2.2z" fill="currentColor" />
+          </svg>
+          {t.cta}
+        </a>
+      </div>
+      <p class="mc-legal">{t.legal}</p>
+    </section>
+
+    <section class="mc-section mc-faq" id="faq">
+      <span class="mc-label">{t.faqLabel}</span>
+      <h2>{t.faqTitle}</h2>
+      {t.faqs.map((faq) => (
+        <details>
+          <summary>{faq.q}</summary>
+          <p>{faq.a}</p>
+        </details>
+      ))}
+    </section>
+
+    <section class="mc-privacy" id="privacy">
+      <h2>{t.privacyTitle}</h2>
+      <p>{t.privacyBody}</p>
+      <p>
+        <a href={`mailto:${DEVELOPER_EMAIL}`}>{DEVELOPER_EMAIL}</a>
+      </p>
+    </section>
+  </div>
+
+  <nav class="mc-share" slot="footer" aria-label={t.share}>
+    <span class="mc-share-label">{t.share}</span>
+    <a
+      href={`https://x.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`}
+      rel="noopener noreferrer"
+      target="_blank"
+    >X</a>
+    <a
+      href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`}
+      rel="noopener noreferrer"
+      target="_blank"
+    >Facebook</a>
+    <a
+      href={`https://service.weibo.com/share/share.php?url=${encodedUrl}&title=${encodedTitle}`}
+      rel="noopener noreferrer"
+      target="_blank"
+    >{locale === 'zh' ? '微博' : 'Weibo'}</a>
+    <a
+      href={`https://t.me/share/url?url=${encodedUrl}&text=${encodedTitle}`}
+      rel="noopener noreferrer"
+      target="_blank"
+    >Telegram</a>
+    <button type="button" class="mc-share-btn" data-share-copy data-copied={t.copiedLink}>{t.copyLink}</button>
+    <button
+      type="button"
+      class="mc-share-btn hidden"
+      data-share-native
+      data-title={t.title}
+      data-text={t.description}
+      data-url={pageUrl}
+    >{t.shareNative}</button>
+  </nav>
+</Invoice>
