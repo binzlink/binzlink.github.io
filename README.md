@@ -12,7 +12,7 @@
 
 ## Email
 
-- zhoubin@claudenovo.com
+- support@claudenovo.com
 
 ## Website
 

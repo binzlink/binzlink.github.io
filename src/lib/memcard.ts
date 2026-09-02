@@ -2,7 +2,7 @@ import { localeMeta, type Locale } from './locales';
 
 export const PLAY_URL = 'https://play.google.com/store/apps/details?id=ai.ai111.cardmem';
 export const PACKAGE_ID = 'ai.ai111.cardmem';
-export const DEVELOPER_EMAIL = 'zhoubin@claudenovo.com';
+export const DEVELOPER_EMAIL = 'support@claudenovo.com';
 export const ICON_SRC = '/cardmem/play_icon_512.png';
 export const FEATURE_SRC = '/cardmem/play_feature_1024x500.jpg';
 export const SHOT_FILES = [

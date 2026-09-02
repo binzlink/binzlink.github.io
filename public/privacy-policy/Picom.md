@@ -94,5 +94,5 @@
 * **开发者 / 公司名称：** 深圳市深科纪元科技有限公司
 * **官方网站：** https://www.claudenovo.com/
 * **隐私政策专页：** https://www.claudenovo.com/privacy-policy/Picom.md
-* **联系/客服邮箱：** zhoubin@claudenovo.com
+* **联系/客服邮箱：** support@claudenovo.com
 * **通信地址：** 深圳市深科纪元科技有限公司（或您的 Play Console 实际注册地址）

@@ -3,7 +3,7 @@ import { localeMeta, type Locale } from './locales';
 export const PLAY_URL =
   'https://play.google.com/store/apps/details?id=com.claudenovo.invoicemaker';
 export const PACKAGE_ID = 'com.claudenovo.invoicemaker';
-export const DEVELOPER_EMAIL = 'zhoubin@claudenovo.com';
+export const DEVELOPER_EMAIL = 'support@claudenovo.com';
 export const ICON_SRC = '/invoice-maker/icon.png';
 export const FEATURE_SRC = '/invoice-maker/feature.png';
 export const SHOT_FILES = [
