@@ -1,0 +1,688 @@
+{
+  "schemaVersion": 2,
+  "packs": [
+    {
+      "id": "id_photo",
+      "nameKey": "template_pack_id_photo",
+      "cover": "",
+      "vip": false,
+      "enabled": true,
+      "sort": 10,
+      "version": 6,
+      "templates": []
+    },
+    {
+      "id": "textbook",
+      "nameKey": "template_pack_textbook",
+      "cover": "templates/art/magazine_front.webp",
+      "vip": false,
+      "enabled": true,
+      "sort": 20,
+      "version": 1,
+      "templates": [
+        {
+          "id": "magazine",
+          "titleKey": "template_magazine",
+          "photoCount": 1,
+          "aspect": "3:4",
+          "art": "magazine",
+          "front": "templates/art/magazine_front.webp",
+          "backgroundColor": "#FF111111",
+          "vip": true,
+          "enabled": true,
+          "sort": 10,
+          "version": 5,
+          "cells": [
+            {
+              "x": 0,
+              "y": 0,
+              "w": 1,
+              "h": 1
+            }
+          ]
+        },
+        {
+          "id": "diary",
+          "titleKey": "template_diary",
+          "photoCount": 1,
+          "aspect": "4:5",
+          "art": "ripped",
+          "front": "templates/art/diary_front.webp",
+          "backgroundColor": "#FFF3E6D6",
+          "vip": false,
+          "enabled": true,
+          "sort": 20,
+          "version": 1,
+          "cells": [
+            {
+              "x": 0.186,
+              "y": 0.052,
+              "w": 0.626,
+              "h": 0.833
+            }
+          ],
+          "seedTexts": [
+            {
+              "id": "seed-diary",
+              "textKey": "template_text_memories",
+              "x": 0.5,
+              "y": 0.92,
+              "scale": 0.75,
+              "color": "#FF3A2A22",
+              "font": "serif"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wedding",
+      "nameKey": "template_pack_wedding",
+      "cover": "templates/art/bloom_front.webp",
+      "vip": false,
+      "enabled": true,
+      "sort": 30,
+      "version": 1,
+      "templates": [
+        {
+          "id": "bloom",
+          "titleKey": "template_bloom",
+          "photoCount": 1,
+          "aspect": "4:5",
+          "art": "polaroid",
+          "front": "templates/art/bloom_front.webp",
+          "backgroundColor": "#FFF7D6E0",
+          "vip": false,
+          "enabled": true,
+          "sort": 10,
+          "version": 1,
+          "cells": [
+            {
+              "x": 0.198,
+              "y": 0.034,
+              "w": 0.604,
+              "h": 0.87
+            }
+          ]
+        },
+        {
+          "id": "blossom",
+          "titleKey": "template_blossom",
+          "photoCount": 1,
+          "aspect": "4:5",
+          "art": "polaroid",
+          "front": "templates/art/blossom_front.webp",
+          "backgroundColor": "#FFFCE8F0",
+          "vip": false,
+          "enabled": true,
+          "sort": 20,
+          "version": 1,
+          "cells": [
+            {
+              "x": 0.179,
+              "y": 0.069,
+              "w": 0.643,
+              "h": 0.834
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "landscape",
+      "nameKey": "template_pack_landscape",
+      "cover": "templates/art/travel_front.webp",
+      "vip": false,
+      "enabled": true,
+      "sort": 40,
+      "version": 1,
+      "templates": [
+        {
+          "id": "travel",
+          "titleKey": "template_travel",
+          "photoCount": 1,
+          "aspect": "4:5",
+          "art": "travel",
+          "front": "templates/art/travel_front.webp",
+          "backgroundColor": "#FF1A3A4A",
+          "vip": false,
+          "enabled": true,
+          "sort": 10,
+          "version": 5,
+          "cells": [
+            {
+              "x": 0.155,
+              "y": 0.0,
+              "w": 0.689,
+              "h": 1.0
+            }
+          ],
+          "seedTexts": [
+            {
+              "id": "seed-travel",
+              "textKey": "template_text_travel",
+              "x": 0.5,
+              "y": 0.88,
+              "scale": 0.9,
+              "color": "#FFF6E7C1",
+              "font": "serif"
+            }
+          ]
+        },
+        {
+          "id": "sunset",
+          "titleKey": "template_sunset",
+          "photoCount": 1,
+          "aspect": "4:5",
+          "art": "travel",
+          "front": "templates/art/sunset_front.webp",
+          "backgroundColor": "#FFF3D5B8",
+          "vip": true,
+          "enabled": true,
+          "sort": 20,
+          "version": 1,
+          "cells": [
+            {
+              "x": 0.113,
+              "y": 0.028,
+              "w": 0.773,
+              "h": 0.827
+            }
+          ]
+        },
+        {
+          "id": "picnic",
+          "titleKey": "template_picnic",
+          "photoCount": 1,
+          "aspect": "4:5",
+          "art": "travel",
+          "front": "templates/art/picnic_front.webp",
+          "backgroundColor": "#FFF2E4C8",
+          "vip": false,
+          "enabled": true,
+          "sort": 30,
+          "version": 1,
+          "cells": [
+            {
+              "x": 0.158,
+              "y": 0.037,
+              "w": 0.683,
+              "h": 0.879
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scifi",
+      "nameKey": "template_pack_scifi",
+      "cover": "templates/art/citylight_front.webp",
+      "vip": false,
+      "enabled": true,
+      "sort": 50,
+      "version": 1,
+      "templates": [
+        {
+          "id": "citylight",
+          "titleKey": "template_citylight",
+          "photoCount": 1,
+          "aspect": "4:5",
+          "art": "movie",
+          "front": "templates/art/citylight_front.webp",
+          "backgroundColor": "#FF1A1428",
+          "vip": true,
+          "enabled": true,
+          "sort": 10,
+          "version": 1,
+          "cells": [
+            {
+              "x": 0.143,
+              "y": 0.02,
+              "w": 0.713,
+              "h": 0.86
+            }
+          ]
+        },
+        {
+          "id": "movie",
+          "titleKey": "template_movie",
+          "photoCount": 1,
+          "aspect": "3:4",
+          "art": "movie",
+          "front": "templates/art/movie_front.webp",
+          "backgroundColor": "#FF140C08",
+          "vip": true,
+          "enabled": true,
+          "sort": 20,
+          "version": 5,
+          "cells": [
+            {
+              "x": 0.0,
+              "y": 0.0,
+              "w": 1.0,
+              "h": 0.695
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cartoon",
+      "nameKey": "template_pack_cartoon",
+      "cover": "templates/art/hero_front.webp",
+      "vip": false,
+      "enabled": true,
+      "sort": 60,
+      "version": 1,
+      "templates": [
+        {
+          "id": "hero",
+          "titleKey": "template_hero",
+          "photoCount": 1,
+          "aspect": "4:5",
+          "art": "hero",
+          "front": "templates/art/hero_front.webp",
+          "backgroundColor": "#FF4BA3D9",
+          "vip": true,
+          "enabled": true,
+          "sort": 10,
+          "version": 5,
+          "cells": [
+            {
+              "x": 0.257,
+              "y": 0.084,
+              "w": 0.499,
+              "h": 0.403,
+              "shape": "oval"
+            }
+          ]
+        },
+        {
+          "id": "cat",
+          "titleKey": "template_cat",
+          "photoCount": 1,
+          "aspect": "4:5",
+          "art": "cat",
+          "front": "templates/art/cat_front.webp",
+          "backgroundColor": "#FFF3C9B0",
+          "vip": false,
+          "enabled": true,
+          "sort": 20,
+          "version": 5,
+          "cells": [
+            {
+              "x": 0.179,
+              "y": 0.135,
+              "w": 0.643,
+              "h": 0.409,
+              "shape": "oval"
+            }
+          ]
+        },
+        {
+          "id": "vanity",
+          "titleKey": "template_vanity",
+          "photoCount": 1,
+          "aspect": "4:5",
+          "art": "cat",
+          "front": "templates/art/vanity_front.webp",
+          "backgroundColor": "#FFF6E8F0",
+          "vip": true,
+          "enabled": true,
+          "sort": 30,
+          "version": 1,
+          "cells": [
+            {
+              "x": 0.282,
+              "y": 0.052,
+              "w": 0.497,
+              "h": 0.581,
+              "shape": "oval"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "magic",
+      "nameKey": "template_pack_magic",
+      "cover": "templates/art/event_front.webp",
+      "vip": false,
+      "enabled": true,
+      "sort": 70,
+      "version": 1,
+      "templates": [
+        {
+          "id": "event",
+          "titleKey": "template_event",
+          "photoCount": 1,
+          "aspect": "9:16",
+          "art": "event",
+          "front": "templates/art/event_front.webp",
+          "backgroundColor": "#FF1B1024",
+          "vip": true,
+          "enabled": true,
+          "sort": 10,
+          "version": 5,
+          "cells": [
+            {
+              "x": 0.097,
+              "y": 0.12,
+              "w": 0.806,
+              "h": 0.728
+            }
+          ]
+        },
+        {
+          "id": "story",
+          "titleKey": "template_story",
+          "photoCount": 1,
+          "aspect": "9:16",
+          "art": "event",
+          "front": "templates/art/story_front.webp",
+          "backgroundColor": "#FFE8D5C4",
+          "vip": true,
+          "enabled": true,
+          "sort": 20,
+          "version": 1,
+          "cells": [
+            {
+              "x": 0.009,
+              "y": 0.066,
+              "w": 0.98,
+              "h": 0.796
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xuanhuan",
+      "nameKey": "template_pack_xuanhuan",
+      "cover": "",
+      "vip": false,
+      "enabled": true,
+      "sort": 80,
+      "version": 1,
+      "templates": []
+    },
+    {
+      "id": "wuxia",
+      "nameKey": "template_pack_wuxia",
+      "cover": "",
+      "vip": false,
+      "enabled": true,
+      "sort": 90,
+      "version": 1,
+      "templates": []
+    },
+    {
+      "id": "japanese",
+      "nameKey": "template_pack_japanese",
+      "cover": "templates/art/polaroid_front.webp",
+      "vip": false,
+      "enabled": true,
+      "sort": 100,
+      "version": 1,
+      "templates": [
+        {
+          "id": "polaroid",
+          "titleKey": "template_polaroid",
+          "photoCount": 1,
+          "aspect": "4:5",
+          "art": "polaroid",
+          "front": "templates/art/polaroid_front.webp",
+          "backgroundColor": "#FF2C2A28",
+          "vip": false,
+          "enabled": true,
+          "sort": 10,
+          "version": 5,
+          "cells": [
+            {
+              "x": 0.1,
+              "y": 0.0,
+              "w": 0.8,
+              "h": 0.768
+            }
+          ],
+          "seedTexts": [
+            {
+              "id": "seed-caption",
+              "textKey": "template_text_today",
+              "x": 0.5,
+              "y": 0.86,
+              "scale": 0.85,
+              "color": "#FF3D3A36",
+              "font": "serif"
+            }
+          ]
+        },
+        {
+          "id": "postcard",
+          "titleKey": "template_postcard",
+          "photoCount": 1,
+          "aspect": "3:2",
+          "art": "postcard",
+          "front": "templates/art/postcard_front.webp",
+          "backgroundColor": "#FFF3E6C8",
+          "vip": false,
+          "enabled": true,
+          "sort": 20,
+          "version": 5,
+          "cells": [
+            {
+              "x": 0.018,
+              "y": 0.03,
+              "w": 0.481,
+              "h": 0.938
+            }
+          ],
+          "seedTexts": [
+            {
+              "id": "seed-greet",
+              "textKey": "template_text_greetings",
+              "x": 0.76,
+              "y": 0.28,
+              "scale": 0.72,
+              "color": "#FF6B3A2A",
+              "font": "serif"
+            }
+          ]
+        },
+        {
+          "id": "cafe",
+          "titleKey": "template_cafe",
+          "photoCount": 1,
+          "aspect": "4:5",
+          "art": "postcard",
+          "front": "templates/art/cafe_front.webp",
+          "backgroundColor": "#FFF6EDE4",
+          "vip": false,
+          "enabled": true,
+          "sort": 30,
+          "version": 1,
+          "cells": [
+            {
+              "x": 0.222,
+              "y": 0.0,
+              "w": 0.68,
+              "h": 0.669
+            }
+          ],
+          "seedTexts": [
+            {
+              "id": "seed-cafe",
+              "textKey": "template_text_today",
+              "x": 0.5,
+              "y": 0.88,
+              "scale": 0.75,
+              "color": "#FF5C4033",
+              "font": "serif"
+            }
+          ]
+        },
+        {
+          "id": "ripped",
+          "titleKey": "template_ripped",
+          "photoCount": 1,
+          "aspect": "4:5",
+          "art": "ripped",
+          "front": "templates/art/ripped_front.webp",
+          "backgroundColor": "#FFE8DDD0",
+          "vip": false,
+          "enabled": true,
+          "sort": 40,
+          "version": 5,
+          "cells": [
+            {
+              "x": 0.162,
+              "y": 0.051,
+              "w": 0.675,
+              "h": 0.887
+            }
+          ],
+          "seedTexts": [
+            {
+              "id": "seed-memory",
+              "textKey": "template_text_memories",
+              "x": 0.5,
+              "y": 0.9,
+              "scale": 0.8,
+              "color": "#FF3A2A22",
+              "font": "serif"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "western",
+      "nameKey": "template_pack_western",
+      "cover": "templates/art/sale_front.webp",
+      "vip": false,
+      "enabled": true,
+      "sort": 110,
+      "version": 1,
+      "templates": [
+        {
+          "id": "sale",
+          "titleKey": "template_sale",
+          "photoCount": 1,
+          "aspect": "4:5",
+          "art": "sale",
+          "front": "templates/art/sale_front.webp",
+          "backgroundColor": "#FFE23C3C",
+          "vip": false,
+          "enabled": true,
+          "sort": 10,
+          "version": 5,
+          "cells": [
+            {
+              "x": 0.071,
+              "y": 0.292,
+              "w": 0.856,
+              "h": 0.648
+            }
+          ]
+        },
+        {
+          "id": "shop",
+          "titleKey": "template_shop",
+          "photoCount": 2,
+          "aspect": "4:5",
+          "art": "shop",
+          "front": "templates/art/shop_front.webp",
+          "backgroundColor": "#FFF6F1E8",
+          "vip": true,
+          "enabled": true,
+          "sort": 20,
+          "version": 5,
+          "cells": [
+            {
+              "x": 0.046,
+              "y": 0.142,
+              "w": 0.437,
+              "h": 0.797
+            },
+            {
+              "x": 0.518,
+              "y": 0.142,
+              "w": 0.437,
+              "h": 0.797
+            }
+          ]
+        },
+        {
+          "id": "lookbook",
+          "titleKey": "template_lookbook",
+          "photoCount": 2,
+          "aspect": "4:5",
+          "art": "shop",
+          "front": "templates/art/lookbook_front.webp",
+          "backgroundColor": "#FFF8F4EF",
+          "vip": true,
+          "enabled": true,
+          "sort": 30,
+          "version": 1,
+          "cells": [
+            {
+              "x": 0.06,
+              "y": 0.184,
+              "w": 0.412,
+              "h": 0.65
+            },
+            {
+              "x": 0.528,
+              "y": 0.184,
+              "w": 0.411,
+              "h": 0.65
+            }
+          ]
+        },
+        {
+          "id": "film",
+          "titleKey": "template_film",
+          "photoCount": 3,
+          "aspect": "9:16",
+          "art": "film",
+          "front": "templates/art/film_front.webp",
+          "backgroundColor": "#FF111111",
+          "vip": true,
+          "enabled": true,
+          "sort": 40,
+          "version": 5,
+          "cells": [
+            {
+              "x": 0.05,
+              "y": 0.021,
+              "w": 0.9,
+              "h": 0.303
+            },
+            {
+              "x": 0.05,
+              "y": 0.352,
+              "w": 0.9,
+              "h": 0.3
+            },
+            {
+              "x": 0.05,
+              "y": 0.677,
+              "w": 0.9,
+              "h": 0.301
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "funny",
+      "nameKey": "template_pack_funny",
+      "cover": "",
+      "vip": false,
+      "enabled": true,
+      "sort": 120,
+      "version": 1,
+      "templates": []
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 2,
+  "categories": [
+    { "id": "texture", "sort": 10 },
+    { "id": "colorful", "sort": 20 }
+  ],
+  "packs": [
+    {
+      "id": "paper",
+      "categoryId": "texture",
+      "name": "纸感",
+      "cover": "backgrounds/paper.webp",
+      "enabled": true,
+      "sort": 10,
+      "version": 1,
+      "vip": false,
+      "backgrounds": [
+        { "id": "paper", "asset": "backgrounds/paper.webp", "enabled": true, "sort": 10, "version": 1, "vip": false },
+        { "id": "linen", "asset": "backgrounds/linen.webp", "enabled": true, "sort": 20, "version": 1, "vip": false },
+        { "id": "scrap", "asset": "backgrounds/scrap.webp", "enabled": true, "sort": 30, "version": 1, "vip": false }
+      ]
+    },
+    {
+      "id": "sky",
+      "categoryId": "colorful",
+      "name": "天光",
+      "cover": "backgrounds/dawn.webp",
+      "enabled": true,
+      "sort": 20,
+      "version": 1,
+      "vip": false,
+      "backgrounds": [
+        { "id": "dawn", "asset": "backgrounds/dawn.webp", "enabled": true, "sort": 10, "version": 1, "vip": false },
+        { "id": "mint", "asset": "backgrounds/mint.webp", "enabled": true, "sort": 20, "version": 1, "vip": false },
+        { "id": "dusk", "asset": "backgrounds/dusk.webp", "enabled": true, "sort": 30, "version": 1, "vip": false }
+      ]
+    },
+    {
+      "id": "luxury",
+      "categoryId": "texture",
+      "name": "质感",
+      "cover": "backgrounds/marble.webp",
+      "enabled": true,
+      "sort": 30,
+      "version": 1,
+      "vip": false,
+      "backgrounds": [
+        { "id": "marble", "asset": "backgrounds/marble.webp", "enabled": true, "sort": 10, "version": 1, "vip": false },
+        { "id": "gold", "asset": "backgrounds/gold.webp", "enabled": true, "sort": 20, "version": 1, "vip": false }
+      ]
+    }
+  ]
+}

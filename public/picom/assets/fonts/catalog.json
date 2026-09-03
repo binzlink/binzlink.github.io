@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "libraries": [
+    { "id": "all", "nameKey": "font_lib_all" },
+    { "id": "system", "nameKey": "font_lib_system" },
+    { "id": "display", "nameKey": "font_lib_display" }
+  ],
+  "fonts": [
+    { "id": "sans", "nameKey": "font_sans", "library": "system", "family": "sans-serif", "enabled": true, "sort": 10, "version": 1 },
+    { "id": "serif", "nameKey": "font_serif", "library": "system", "family": "serif", "enabled": true, "sort": 20, "version": 1 },
+    { "id": "mono", "nameKey": "font_mono", "library": "system", "family": "monospace", "enabled": true, "sort": 30, "version": 1 },
+    { "id": "cursive", "nameKey": "font_cursive", "library": "display", "family": "cursive", "enabled": true, "sort": 40, "version": 1 },
+    { "id": "fantasy", "nameKey": "font_fantasy", "library": "display", "family": "fantasy", "enabled": true, "sort": 50, "version": 1 }
+  ]
+}

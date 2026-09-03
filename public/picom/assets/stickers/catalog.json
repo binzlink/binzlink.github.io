@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "stickers": [
+    { "id": "heart", "asset": "stickers/heart.webp", "enabled": true, "sort": 10, "version": 1, "vip": false },
+    { "id": "star", "asset": "stickers/star.webp", "enabled": true, "sort": 20, "version": 1, "vip": false },
+    { "id": "sparkle", "asset": "stickers/sparkle.webp", "enabled": true, "sort": 30, "version": 1, "vip": false },
+    { "id": "flower", "asset": "stickers/flower.webp", "enabled": true, "sort": 40, "version": 1, "vip": false },
+    { "id": "sun", "asset": "stickers/sun.webp", "enabled": true, "sort": 50, "version": 1, "vip": false },
+    { "id": "moon", "asset": "stickers/moon.webp", "enabled": true, "sort": 60, "version": 1, "vip": false },
+    { "id": "cloud", "asset": "stickers/cloud.webp", "enabled": true, "sort": 70, "version": 1, "vip": false },
+    { "id": "fire", "asset": "stickers/fire.webp", "enabled": true, "sort": 80, "version": 1, "vip": false },
+    { "id": "leaf", "asset": "stickers/leaf.webp", "enabled": true, "sort": 90, "version": 1, "vip": false },
+    { "id": "bow", "asset": "stickers/bow.webp", "enabled": true, "sort": 100, "version": 1, "vip": false },
+    { "id": "camera", "asset": "stickers/camera.webp", "enabled": true, "sort": 110, "version": 1, "vip": false },
+    { "id": "music", "asset": "stickers/music.webp", "enabled": true, "sort": 120, "version": 1, "vip": false },
+    { "id": "party", "asset": "stickers/party.webp", "enabled": true, "sort": 130, "version": 1, "vip": false },
+    { "id": "smile", "asset": "stickers/smile.webp", "enabled": true, "sort": 140, "version": 1, "vip": false },
+    { "id": "thumbs", "asset": "stickers/thumbs.webp", "enabled": true, "sort": 150, "version": 1, "vip": false },
+    { "id": "rainbow", "asset": "stickers/rainbow.webp", "enabled": true, "sort": 160, "version": 1, "vip": false }
+  ]
+}
