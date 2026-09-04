@@ -1,0 +1,12 @@
+---
+import PicomPage from '../../components/PicomPage.astro';
+import { localeStaticPaths } from '../../lib/locales';
+
+export function getStaticPaths() {
+  return localeStaticPaths();
+}
+
+const { locale } = Astro.props;
+---
+
+<PicomPage locale={locale} />
