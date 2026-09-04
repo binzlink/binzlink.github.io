@@ -4,13 +4,12 @@ import JsonLd from './JsonLd.astro';
 import { locPath, type Locale } from '../lib/locales';
 import {
   DEVELOPER_EMAIL,
-  HERO_ART,
   ICON_SRC,
   PACKAGE_ID,
   PLAY_URL,
-  SHOT_FILES,
-  STICKER_SRC,
+  featureSrc,
   picom,
+  shotFiles,
 } from '../lib/picom';
 
 interface Props {
@@ -24,7 +23,9 @@ const origin = Astro.site ?? new URL('https://www.claudenovo.com');
 const pageUrl = new URL(path, origin).href;
 const encodedUrl = encodeURIComponent(pageUrl);
 const encodedTitle = encodeURIComponent(t.title);
-const shots = t.shots.map((shot, i) => ({ ...shot, src: SHOT_FILES[i] }));
+const feature = featureSrc(locale);
+const shotsSrc = shotFiles(locale);
+const shots = t.shots.map((shot, i) => ({ ...shot, src: shotsSrc[i] }));
 ---
 
 <Picom locale={locale}>
@@ -46,7 +47,7 @@ const shots = t.shots.map((shot, i) => ({ ...shot, src: SHOT_FILES[i] }));
           inLanguage: t.htmlLang,
           isAccessibleForFree: true,
           image: new URL(ICON_SRC, origin).href,
-          screenshot: SHOT_FILES.map((src) => new URL(src, origin).href),
+          screenshot: shotsSrc.map((src) => new URL(src, origin).href),
           publisher: {
             '@type': 'Organization',
             name: t.developer,
@@ -89,21 +90,15 @@ const shots = t.shots.map((shot, i) => ({ ...shot, src: SHOT_FILES[i] }));
     </section>
   </div>
 
-  <div class="pc-stage" aria-hidden="true">
-    <div class="pc-stage-inner">
-      <div class="pc-collage">
-        {HERO_ART.map((src) => (
-          <figure class="pc-card">
-            <img src={src} alt="" width="480" height="640" loading="eager" />
-          </figure>
-        ))}
-        <div class="pc-stickers">
-          {STICKER_SRC.map((src) => (
-            <img src={src} alt="" width="64" height="64" loading="eager" />
-          ))}
-        </div>
-      </div>
-    </div>
+  <div class="pc-stage">
+    <img
+      class="pc-feature"
+      src={feature}
+      alt={`${t.name} — ${t.headline}`}
+      width="1920"
+      height="1080"
+      loading="eager"
+    />
   </div>
 
   <div class="mc-wrap">
@@ -122,7 +117,7 @@ const shots = t.shots.map((shot, i) => ({ ...shot, src: SHOT_FILES[i] }));
       <div class="mc-shots">
         {shots.map((shot) => (
           <figure class="mc-shot">
-            <img src={shot.src} alt={`${shot.title} — ${shot.caption}`} width="720" height="1280" loading="lazy" />
+            <img src={shot.src} alt={`${shot.title} — ${shot.caption}`} width="1080" height="1920" loading="lazy" />
             <figcaption>
               <strong>{shot.title}</strong>
               {shot.caption}

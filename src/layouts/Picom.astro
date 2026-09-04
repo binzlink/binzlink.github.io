@@ -1,6 +1,6 @@
 ---
 import '../styles/picom.css';
-import { ICON_SRC, FEATURE_SRC, PLAY_URL, picom } from '../lib/picom';
+import { ICON_SRC, featureSrc, PLAY_URL, picom } from '../lib/picom';
 import {
   LOCALES,
   localeMeta,
@@ -19,6 +19,7 @@ const meta = localeMeta(locale);
 const path = locPath('/picom/', locale);
 const canonical = new URL(path, Astro.site).href;
 const enHref = new URL(switchLocaleHref(path, locale, 'en'), Astro.site).href;
+const FEATURE_SRC = featureSrc(locale);
 const ogImage = new URL(FEATURE_SRC, Astro.site).href;
 ---
 
@@ -41,16 +42,16 @@ const ogImage = new URL(FEATURE_SRC, Astro.site).href;
     <link rel="alternate" hreflang="x-default" href={enHref} />
     <link rel="icon" type="image/png" href={ICON_SRC} />
     <link rel="apple-touch-icon" href={ICON_SRC} />
-    <meta name="theme-color" content="#2f8f8a" />
+    <meta name="theme-color" content="#E4572E" />
     <meta name="color-scheme" content="light" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Picom Collage" />
+    <meta property="og:site_name" content="Picom" />
     <meta property="og:title" content={t.title} />
     <meta property="og:description" content={t.description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
-    <meta property="og:image:width" content="1024" />
-    <meta property="og:image:height" content="500" />
+    <meta property="og:image:width" content="1920" />
+    <meta property="og:image:height" content="1080" />
     <meta property="og:locale" content={meta.html.replace('-', '_')} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={t.title} />

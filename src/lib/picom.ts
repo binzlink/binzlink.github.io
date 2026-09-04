@@ -5,30 +5,32 @@ export const PLAY_URL =
 export const PACKAGE_ID = 'com.claudenovo.photostitch';
 export const DEVELOPER_EMAIL = 'support@claudenovo.com';
 export const ICON_SRC = '/picom/icon.png';
-export const FEATURE_SRC = '/picom/feature.jpg';
-export const SHOT_FILES = [
-  '/picom/shot_polaroid.jpg',
-  '/picom/shot_film.jpg',
-  '/picom/shot_travel.jpg',
-  '/picom/shot_diary.jpg',
-  '/picom/shot_magazine.jpg',
-  '/picom/shot_postcard.jpg',
-] as const;
-export const HERO_ART = [
-  '/picom/assets/templates/art/polaroid_front.webp',
-  '/picom/assets/templates/art/film_front.webp',
-  '/picom/assets/templates/art/travel_front.webp',
-  '/picom/assets/templates/art/diary_front.webp',
-  '/picom/assets/templates/art/postcard_front.webp',
-] as const;
-export const STICKER_SRC = [
-  '/picom/assets/stickers/heart.webp',
-  '/picom/assets/stickers/star.webp',
-  '/picom/assets/stickers/camera.webp',
-  '/picom/assets/stickers/sparkle.webp',
-  '/picom/assets/stickers/flower.webp',
-  '/picom/assets/stickers/rainbow.webp',
-] as const;
+
+/** Play Console phone shots, listing order. */
+const SHOT_NAMES = ['02-hero', '04-layouts', '08-decorate', '05-crop'] as const;
+
+const STORE_LOCALE: Partial<Record<Locale, string>> = {
+  en: 'en',
+  zh: 'zh-CN',
+  ja: 'ja',
+};
+
+export function storeFolder(locale: Locale): string {
+  return STORE_LOCALE[locale] ?? 'en';
+}
+
+export function featureSrc(locale: Locale = 'en'): string {
+  return `/picom/store/${storeFolder(locale)}/feature.jpg`;
+}
+
+export function shotFiles(locale: Locale = 'en'): string[] {
+  const folder = storeFolder(locale);
+  return SHOT_NAMES.map((name) => `/picom/store/${folder}/${name}.jpg`);
+}
+
+/** Default (English) paths for meta fallbacks. */
+export const FEATURE_SRC = featureSrc('en');
+export const SHOT_FILES = shotFiles('en');
 
 export type PicomCopy = {
   htmlLang: string;
@@ -74,29 +76,26 @@ const en: PicomCopy = {
   htmlLang: 'en',
   name: 'Picom',
   title: 'Picom Collage — Pick a few photos. Make one story.',
-  description:
-    'Photo collage layouts and scrapbook freestyle. On-device cutouts. Borders, filters, stickers, type — then save or share.',
+  description: 'Pick a few photos. Make one story. Layouts, scrapbook, on-device cutout.',
   kicker: 'Photo collage',
   headline: 'Pick a few. Make one.',
-  lead: 'Turn the photos sitting in your gallery into one frame you actually want to send. Start from a layout, or place them like a journal page. Background removal runs on your phone.',
+  lead: 'Turn scattered moments into one story. Start from a layout, or drop photos like a scrapbook. Background removal runs on your phone — originals stay on the device.',
   cta: 'Get it on Google Play',
   ctaHint: 'Android · free · ads & optional in-app purchases',
   skip: 'Skip to content',
   stats: [
-    { value: 'Layout', label: 'Grid, split, shapes' },
-    { value: 'Freestyle', label: 'Place like a scrapbook' },
+    { value: 'One frame', label: 'Not a nine-grid dump' },
+    { value: 'Layouts', label: 'Or freestyle scrapbook' },
     { value: 'On-device', label: 'Cutouts stay local' },
     { value: 'Export', label: 'Save or share' },
   ],
   shotsLabel: 'Looks inside',
   shotsTitle: 'One complete frame — not a nine-grid.',
   shots: [
-    { title: 'Polaroid', caption: 'A single shot with room to breathe.' },
-    { title: 'Film strip', caption: 'Sequence a trip in one export.' },
-    { title: 'Travel', caption: 'Recaps that feel like a page, not a dump.' },
-    { title: 'Diary', caption: 'Journal energy for everyday moments.' },
-    { title: 'Magazine', caption: 'Poster weight for shop and event posts.' },
-    { title: 'Postcard', caption: 'Send-ready frames for group photos.' },
+    { title: 'One story', caption: 'Pick a few photos. Make one frame you want to send.' },
+    { title: 'Layouts', caption: 'Grid, split, irregular — or place freely like a journal.' },
+    { title: 'Decorate', caption: 'Borders, filters, stickers, type, and doodles.' },
+    { title: 'Crop', caption: 'Crop first when you only need one shot.' },
   ],
   howLabel: 'How it works',
   howTitle: 'Pick. Arrange. Send.',
@@ -117,8 +116,8 @@ const en: PicomCopy = {
     { name: 'Light / dark', body: 'Theme that follows how you edit.' },
     { name: 'Languages', body: 'Multiple languages for the people you send to.' },
   ],
-  closeHeadline: 'Scattered moments. One story.',
-  closeLead: 'Picom turns a handful of photos into one complete frame — for trip recaps, group shots, journal pages, and shop posters.',
+  closeHeadline: 'Turn scattered moments into one story.',
+  closeLead: 'For trip recaps, group photos, journal pages, and shop posters: one complete frame.',
   legal: 'Contains ads and optional in-app purchases. Rated Everyone.',
   privacy: 'Privacy',
   privacyTitle: 'Privacy',
@@ -157,29 +156,27 @@ const en: PicomCopy = {
 const zh: PicomCopy = {
   ...en,
   htmlLang: 'zh-CN',
-  title: 'Picom Collage — 选几张图，拼成一张故事。',
-  description: '拼图布局与手账自由摆放。本机抠图。边框、滤镜、贴纸、文字——然后保存或分享。',
+  title: 'Picom — 选几张，拼成一张故事。',
+  description: '选几张照片，做成一张故事。模板拼贴、自由手帐、一键去背景，全在设备端完成。',
   kicker: '照片拼贴',
-  headline: '选几张。拼成一张。',
-  lead: '把相册里闲着的照片，变成一张真正想发出去的图。可以从布局开始，也可以像手账一样随意摆。抠图在手机上完成。',
+  headline: '选几张，拼成一张',
+  lead: '把散落的瞬间，拼成一张故事。套模板，或像手帐一样随手摆。去背景在你手机上完成，不必把原图传到云端。',
   cta: '在 Google Play 下载',
   ctaHint: 'Android · 免费 · 含广告与可选内购',
   skip: '跳到正文',
   stats: [
-    { value: '布局', label: '宫格、分割、异形' },
-    { value: '自由摆', label: '像手账一样贴' },
+    { value: '一张就够', label: '不是九格凑合' },
+    { value: '模板', label: '或手帐自由摆' },
     { value: '本机', label: '抠图留在手机' },
     { value: '导出', label: '保存或分享' },
   ],
   shotsLabel: '里面长这样',
   shotsTitle: '一张完整画面——不是九宫格堆砌。',
   shots: [
-    { title: '宝丽来', caption: '单张也有呼吸感。' },
-    { title: '胶片条', caption: '把行程排成一条导出。' },
-    { title: '旅行', caption: '像一页回顾，不像相册倾倒。' },
-    { title: '日记', caption: '日常也有手账感。' },
-    { title: '杂志', caption: '店招、活动海报更有分量。' },
-    { title: '明信片', caption: '合照也能直接发出去。' },
+    { title: '一张故事', caption: '选几张图，拼成你想发出去的那一张。' },
+    { title: '布局', caption: '要快用模板；要个性就自由摆。' },
+    { title: '点缀', caption: '边框、滤镜、贴纸、文字、涂鸦。' },
+    { title: '裁切', caption: '只需要一格时，先裁出想要的画面。' },
   ],
   howLabel: '怎么用',
   howTitle: '选图。摆好。发出去。',
@@ -200,8 +197,8 @@ const zh: PicomCopy = {
     { name: '浅色 / 深色', body: '编辑时跟着主题走。' },
     { name: '多语言', body: '发给谁都能读得懂界面。' },
   ],
-  closeHeadline: '零散瞬间。一张故事。',
-  closeLead: 'Picom 把几张照片收成一张完整画面——旅行回顾、合照、手账页、店招海报都适用。',
+  closeHeadline: '把散落的瞬间，拼成一张故事。',
+  closeLead: '旅行收尾、聚会合影、手帐一页、店铺海报：发出去的是一张完整画面。',
   legal: '含广告与可选内购。适合全年龄。',
   privacy: '隐私',
   privacyTitle: '隐私',
@@ -227,30 +224,27 @@ const zh: PicomCopy = {
 const ja: PicomCopy = {
   ...en,
   htmlLang: 'ja',
-  title: 'Picom Collage — 数枚を選んで、一枚の物語に。',
-  description:
-    'レイアウトとスクラップ風の自由配置。端末内切り抜き。枠・フィルタ・スタンプ・文字。保存か共有。',
+  title: 'Picom コラージュ — 何枚か選んで、1枚に。',
+  description: '写真を選んで、1枚の物語に。テンプレート、フリー配置、端末内の切り抜き。',
   kicker: 'フォトコラージュ',
-  headline: '数枚選ぶ。一枚にする。',
-  lead: 'ギャラリーに眠る写真を、送りたくなる一枚に。レイアウトから始めるか、手帳のように置くか。切り抜きは端末内で。',
+  headline: '何枚か選んで、1枚に。',
+  lead: '散らばった瞬間を、ひとつの物語に。テンプレートか、手帳のように置くか。切り抜きは端末内で — 原画はクラウドに上げません。',
   cta: 'Google Play で入手',
   ctaHint: 'Android · 無料 · 広告と任意のアプリ内購入',
   skip: '本文へ',
   stats: [
-    { value: 'Layout', label: 'グリッド・分割・形' },
-    { value: 'Freestyle', label: 'スクラップのように' },
+    { value: '1枚で', label: '九分割の羅列ではない' },
+    { value: 'レイアウト', label: 'または自由配置' },
     { value: '端末内', label: '切り抜きはローカル' },
     { value: '書き出し', label: '保存または共有' },
   ],
   shotsLabel: '中を見る',
-  shotsTitle: '九分割の羅列ではなく、ひとつの完成フレーム。',
+  shotsTitle: 'ひとつの完成フレーム — 九分割ではない。',
   shots: [
-    { title: 'ポラロイド', caption: '一枚でも余白がある。' },
-    { title: 'フィルム', caption: '旅を一本に並べて書き出し。' },
-    { title: 'Travel', caption: 'ダンプではなくページの振り返り。' },
-    { title: 'Diary', caption: '日常も手帳の空気で。' },
-    { title: 'Magazine', caption: '店やイベントのポスター感。' },
-    { title: 'Postcard', caption: '集合写真も送れる枠。' },
+    { title: 'ひとつの物語', caption: '数枚選んで、送りたくなる1枚に。' },
+    { title: 'レイアウト', caption: '速さならテンプレート。個性なら自由配置。' },
+    { title: '飾る', caption: '枠、フィルタ、スタンプ、文字、落書き。' },
+    { title: '切り抜き', caption: '1枚だけでいいときは、先にトリミング。' },
   ],
   howLabel: '使い方',
   howTitle: '選ぶ。並べる。送る。',
@@ -271,8 +265,8 @@ const ja: PicomCopy = {
     { name: 'ライト / ダーク', body: '編集の雰囲気に合わせる。' },
     { name: '多言語', body: '送る相手向けに複数言語。' },
   ],
-  closeHeadline: '散らばった瞬間を、一つの物語に。',
-  closeLead: 'Picom は数枚の写真を一枚の完成フレームに。旅の振り返り、集合写真、日記、店舗ポスター向け。',
+  closeHeadline: '散らばった瞬間を、ひとつの物語に。',
+  closeLead: '旅の振り返り、集合写真、日記、店舗ポスター向け。ひとつの完成フレーム。',
   legal: '広告と任意のアプリ内購入あり。全年齢対象。',
   privacy: 'プライバシー',
   privacyTitle: 'プライバシー',
